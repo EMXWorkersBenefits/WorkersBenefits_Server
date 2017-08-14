@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.WebAPI", "EMX.WorkersBenefits.WebAPI\EMX.WorkersBenefits.WebAPI.csproj", "{8CDA7087-6244-4DEF-975F-6D807B623970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.WebAPI.Tests", "EMX.WorkersBenefits.WebAPI.Tests\EMX.WorkersBenefits.WebAPI.Tests.csproj", "{3F549302-C96E-4460-91DD-4C27277A4A15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.BL", "EMX.WorkersBenefits.BL\EMX.WorkersBenefits.BL.csproj", "{B83FE8A0-E0E7-4D47-86E3-9E702B8C24B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.DAL", "EMX.WorkersBenefits.DAL\EMX.WorkersBenefits.DAL.csproj", "{94571CA2-B615-4429-84C5-D972A76C8222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.Shared", "EMX.WorkersBenefits.Shared\EMX.WorkersBenefits.Shared.csproj", "{D869B156-5CDE-4B6E-9316-C77CCFCD9336}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CDA7087-6244-4DEF-975F-6D807B623970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDA7087-6244-4DEF-975F-6D807B623970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDA7087-6244-4DEF-975F-6D807B623970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDA7087-6244-4DEF-975F-6D807B623970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F549302-C96E-4460-91DD-4C27277A4A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F549302-C96E-4460-91DD-4C27277A4A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F549302-C96E-4460-91DD-4C27277A4A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F549302-C96E-4460-91DD-4C27277A4A15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83FE8A0-E0E7-4D47-86E3-9E702B8C24B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83FE8A0-E0E7-4D47-86E3-9E702B8C24B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83FE8A0-E0E7-4D47-86E3-9E702B8C24B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83FE8A0-E0E7-4D47-86E3-9E702B8C24B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94571CA2-B615-4429-84C5-D972A76C8222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94571CA2-B615-4429-84C5-D972A76C8222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94571CA2-B615-4429-84C5-D972A76C8222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94571CA2-B615-4429-84C5-D972A76C8222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://oahdout85.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EMX.WorkersBenefits.WebAPI.Tests\\EMX.WorkersBenefits.WebAPI.Tests.csproj
+		SccProjectName1 = EMX.WorkersBenefits.WebAPI.Tests
+		SccLocalPath1 = EMX.WorkersBenefits.WebAPI.Tests
+		SccProjectUniqueName2 = EMX.WorkersBenefits.WebAPI\\EMX.WorkersBenefits.WebAPI.csproj
+		SccProjectName2 = EMX.WorkersBenefits.WebAPI
+		SccLocalPath2 = EMX.WorkersBenefits.WebAPI
+		SccProjectUniqueName3 = EMX.WorkersBenefits.BL\\EMX.WorkersBenefits.BL.csproj
+		SccProjectName3 = EMX.WorkersBenefits.BL
+		SccLocalPath3 = EMX.WorkersBenefits.BL
+		SccProjectUniqueName4 = EMX.WorkersBenefits.DAL\\EMX.WorkersBenefits.DAL.csproj
+		SccProjectName4 = EMX.WorkersBenefits.DAL
+		SccLocalPath4 = EMX.WorkersBenefits.DAL
+		SccProjectUniqueName5 = EMX.WorkersBenefits.Shared\\EMX.WorkersBenefits.Shared.csproj
+		SccProjectName5 = EMX.WorkersBenefits.Shared
+		SccLocalPath5 = EMX.WorkersBenefits.Shared
+	EndGlobalSection
+EndGlobal

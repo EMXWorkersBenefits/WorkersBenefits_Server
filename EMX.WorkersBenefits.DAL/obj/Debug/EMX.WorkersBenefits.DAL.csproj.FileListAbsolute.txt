@@ -14,4 +14,3 @@ C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\MySql.Dat
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\MySql.Data.Entity.EF6.xml
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\MySql.Web.xml
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.csproj.CoreCompileInputs.cache
-C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.csprojResolveAssemblyReference.cache

@@ -4,35 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7699580dcc4d41cc8c91f2abe459434b" Name="Diagram1" ZoomLevel="33">
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.admin_person_settings" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.admin_persons" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.category" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company_person_settings" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company_persons" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.order" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.product_types" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.product" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.role" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.userclaim" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.userlogin" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.user" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker_purchase_history" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker_settings" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+      <Diagram DiagramId="3427dda143f343b8a23a2c0ce7517a2c" Name="Diagram1">
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.admin_person_settings" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.admin_persons" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.category" Width="1.5" PointX="7.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company_person_settings" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.company_persons" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.order" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.product_types" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.product" Width="1.5" PointX="10" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.role" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.userclaim" Width="1.5" PointX="10" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.userlogin" Width="1.5" PointX="10" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.user" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker_purchase_history" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker_settings" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkersBenefitsDBModels.worker" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.admin_person_id_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.category_id" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.company_id" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.company_id_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.company_person_id_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.workier_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.product_type_id" ManuallyRouted="false" />
         <AssociationConnector Association="WorkersBenefitsDBModels.ApplicationUser_Claims" ManuallyRouted="false" />
         <AssociationConnector Association="WorkersBenefitsDBModels.ApplicationUser_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkersBenefitsDBModels.worker_id_fk1" ManuallyRouted="false" />
         <AssociationConnector Association="WorkersBenefitsDBModels.userroles" ManuallyRouted="false" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.admin_person_id_FK" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.category_id" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.company_id" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.company_id_FK" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.company_person_id_FK" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.workier_id_fk" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.product_type_id" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.product_id_fk" />
-        <AssociationConnector Association="WorkersBenefitsDBModels.worker_id_fk1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -66,6 +66,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\admin_persons.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin_person_settings.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\company.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\company_persons.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\company_person_settings.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product_types.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\role.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userclaim.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userlogin.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\worker.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WorkersBenefitsDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +122,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkersBenefitsDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\worker_purchase_history.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\worker_settings.cs">
+      <DependentUpon>WorkersBenefitsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

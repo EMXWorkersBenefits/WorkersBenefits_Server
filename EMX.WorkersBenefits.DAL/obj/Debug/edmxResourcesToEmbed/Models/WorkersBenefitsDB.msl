@@ -71,7 +71,6 @@
           <ScalarProperty Name="phone_number" ColumnName="phone_number" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="last_update" ColumnName="last_update" />
-          <ScalarProperty Name="workerscol" ColumnName="workerscol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WorkersBenefitsDBModels.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WorkersBenefitsDBModels.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin_person_settings">
           <Key>
             <PropertyRef Name="setting_id" />
@@ -71,7 +71,6 @@
           <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="active" Type="bit" Nullable="false" />
           <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="workerscol" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="orders">
           <Key>
@@ -307,18 +306,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="product_id_fk">
-          <End Role="products" Type="Self.products" Multiplicity="1" />
-          <End Role="worker_purchase_history" Type="Self.worker_purchase_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="worker_purchase_history">
-              <PropertyRef Name="product_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="product_type_id">
           <End Role="product_types" Type="Self.product_types" Multiplicity="1" />
           <End Role="products" Type="Self.products" Multiplicity="*" />
@@ -409,10 +396,6 @@
             <End Role="roles" EntitySet="roles" />
             <End Role="userroles" EntitySet="userroles" />
           </AssociationSet>
-          <AssociationSet Name="product_id_fk" Association="Self.product_id_fk">
-            <End Role="products" EntitySet="products" />
-            <End Role="worker_purchase_history" EntitySet="worker_purchase_history" />
-          </AssociationSet>
           <AssociationSet Name="product_type_id" Association="Self.product_type_id">
             <End Role="product_types" EntitySet="product_types" />
             <End Role="products" EntitySet="products" />
@@ -426,7 +409,8 @@
             <End Role="orders" EntitySet="orders" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WorkersBenefitsDBModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -439,7 +423,7 @@
           <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="admin_persons" Relationship="WorkersBenefitsDBModels.admin_person_id_FK" FromRole="admin_person_settings" ToRole="admin_persons" />
+          <NavigationProperty Name="admin_persons" Relationship="Self.admin_person_id_FK" FromRole="admin_person_settings" ToRole="admin_persons" />
         </EntityType>
         <EntityType Name="admin_persons">
           <Key>
@@ -452,7 +436,7 @@
           <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="active" Type="Boolean" Nullable="false" />
           <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="admin_person_settings" Relationship="WorkersBenefitsDBModels.admin_person_id_FK" FromRole="admin_persons" ToRole="admin_person_settings" />
+          <NavigationProperty Name="admin_person_settings" Relationship="Self.admin_person_id_FK" FromRole="admin_persons" ToRole="admin_person_settings" />
         </EntityType>
         <EntityType Name="category">
           <Key>
@@ -463,7 +447,7 @@
           <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="magnitude" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="products" Relationship="WorkersBenefitsDBModels.category_id" FromRole="category" ToRole="product" />
+          <NavigationProperty Name="products" Relationship="Self.category_id" FromRole="categories" ToRole="products" />
         </EntityType>
         <EntityType Name="company">
           <Key>
@@ -476,8 +460,8 @@
           <Property Name="contact_person_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contact_person_phone" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="registration_date" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="workers" Relationship="WorkersBenefitsDBModels.company_id" FromRole="company" ToRole="worker" />
-          <NavigationProperty Name="company_persons" Relationship="WorkersBenefitsDBModels.company_id_FK" FromRole="company" ToRole="company_persons" />
+          <NavigationProperty Name="workers" Relationship="Self.company_id" FromRole="companies" ToRole="workers" />
+          <NavigationProperty Name="company_persons" Relationship="Self.company_id_FK" FromRole="companies" ToRole="company_persons" />
         </EntityType>
         <EntityType Name="company_person_settings">
           <Key>
@@ -488,24 +472,22 @@
           <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="company_persons" Relationship="WorkersBenefitsDBModels.company_person_id_FK" FromRole="company_person_settings" ToRole="company_persons" />
+          <NavigationProperty Name="company_persons" Relationship="Self.company_person_id_FK" FromRole="company_person_settings" ToRole="company_persons" />
         </EntityType>
         <EntityType Name="company_persons">
           <Key>
             <PropertyRef Name="company_person_id" />
           </Key>
           <Property Name="company_person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company_id" Type="Int32" Nullable="false" />
           <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="last_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="active" Type="Boolean" Nullable="false" />
           <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="workerscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="company_personscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="company_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id_FK" FromRole="company_persons" ToRole="company" />
-          <NavigationProperty Name="company_person_settings" Relationship="WorkersBenefitsDBModels.company_person_id_FK" FromRole="company_persons" ToRole="company_person_settings" />
+          <NavigationProperty Name="company" Relationship="Self.company_id_FK" FromRole="company_persons" ToRole="companies" />
+          <NavigationProperty Name="company_person_settings" Relationship="Self.company_person_id_FK" FromRole="company_persons" ToRole="company_person_settings" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -517,7 +499,7 @@
           <Property Name="charge_amount" Type="Decimal" Nullable="false" />
           <Property Name="order_date" Type="DateTime" Nullable="false" />
           <Property Name="comments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.workier_id_fk" FromRole="order" ToRole="worker" />
+          <NavigationProperty Name="worker" Relationship="Self.workier_id_fk" FromRole="orders" ToRole="workers" />
         </EntityType>
         <EntityType Name="product_types">
           <Key>
@@ -525,25 +507,23 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="products" Relationship="WorkersBenefitsDBModels.product_type_id" FromRole="product_types" ToRole="product" />
+          <NavigationProperty Name="products" Relationship="Self.product_type_id" FromRole="product_types" ToRole="products" />
         </EntityType>
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="product_type_id" Type="Int32" Nullable="false" />
           <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="price" Type="Decimal" Nullable="false" />
           <Property Name="restrictions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="popup" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="productscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="category_id" Type="Int32" Nullable="false" />
-          <Property Name="product_type_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="category" Relationship="WorkersBenefitsDBModels.category_id" FromRole="product" ToRole="category" />
-          <NavigationProperty Name="product_types" Relationship="WorkersBenefitsDBModels.product_type_id" FromRole="product" ToRole="product_types" />
-          <NavigationProperty Name="worker_purchase_history" Relationship="WorkersBenefitsDBModels.product_id_fk" FromRole="product" ToRole="worker_purchase_history" />
+          <NavigationProperty Name="category" Relationship="Self.category_id" FromRole="products" ToRole="categories" />
+          <NavigationProperty Name="product_types" Relationship="Self.product_type_id" FromRole="products" ToRole="product_types" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -599,11 +579,10 @@
             <PropertyRef Name="purchase_id" />
           </Key>
           <Property Name="purchase_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="product_id" Type="Int32" />
-          <Property Name="discount" Type="Decimal" />
-          <Property Name="final_price" Type="Decimal" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="discount" Type="Decimal" Nullable="false" />
+          <Property Name="final_price" Type="Decimal" Nullable="false" />
           <Property Name="purchase_date" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="product" Relationship="WorkersBenefitsDBModels.product_id_fk" FromRole="worker_purchase_history" ToRole="product" />
         </EntityType>
         <EntityType Name="worker_settings">
           <Key>
@@ -614,7 +593,7 @@
           <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.worker_id_fk1" FromRole="worker_settings" ToRole="worker" />
+          <NavigationProperty Name="worker" Relationship="Self.worker_id_fk1" FromRole="worker_settings" ToRole="workers" />
         </EntityType>
         <EntityType Name="worker">
           <Key>
@@ -630,10 +609,94 @@
           <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="active" Type="Boolean" Nullable="false" />
           <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id" FromRole="worker" ToRole="company" />
-          <NavigationProperty Name="orders" Relationship="WorkersBenefitsDBModels.workier_id_fk" FromRole="worker" ToRole="order" />
-          <NavigationProperty Name="worker_settings" Relationship="WorkersBenefitsDBModels.worker_id_fk1" FromRole="worker" ToRole="worker_settings" />
+          <NavigationProperty Name="company" Relationship="Self.company_id" FromRole="workers" ToRole="companies" />
+          <NavigationProperty Name="orders" Relationship="Self.workier_id_fk" FromRole="workers" ToRole="orders" />
+          <NavigationProperty Name="worker_settings" Relationship="Self.worker_id_fk1" FromRole="workers" ToRole="worker_settings" />
         </EntityType>
+        <Association Name="admin_person_id_FK">
+          <End Role="admin_persons" Type="Self.admin_persons" Multiplicity="1" />
+          <End Role="admin_person_settings" Type="Self.admin_person_settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admin_persons">
+              <PropertyRef Name="admin_person_id" />
+            </Principal>
+            <Dependent Role="admin_person_settings">
+              <PropertyRef Name="admin_person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="category_id">
+          <End Role="categories" Type="Self.category" Multiplicity="1" />
+          <End Role="products" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="company_id">
+          <End Role="companies" Type="Self.company" Multiplicity="1" />
+          <End Role="workers" Type="Self.worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="companies">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="company_id_FK">
+          <End Role="companies" Type="Self.company" Multiplicity="1" />
+          <End Role="company_persons" Type="Self.company_persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="companies">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="company_persons">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="company_person_id_FK">
+          <End Role="company_persons" Type="Self.company_persons" Multiplicity="1" />
+          <End Role="company_person_settings" Type="Self.company_person_settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company_persons">
+              <PropertyRef Name="company_person_id" />
+            </Principal>
+            <Dependent Role="company_person_settings">
+              <PropertyRef Name="company_person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="workier_id_fk">
+          <End Role="workers" Type="Self.worker" Multiplicity="1" />
+          <End Role="orders" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="workers">
+              <PropertyRef Name="worker_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="worker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_type_id">
+          <End Role="product_types" Type="Self.product_types" Multiplicity="1" />
+          <End Role="products" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_types">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="product_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="ApplicationUser_Claims">
           <End Role="users" Type="Self.user" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -662,11 +725,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="worker_id_fk1">
+          <End Role="workers" Type="Self.worker" Multiplicity="1" />
+          <End Role="worker_settings" Type="Self.worker_settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="workers">
+              <PropertyRef Name="worker_id" />
+            </Principal>
+            <Dependent Role="worker_settings">
+              <PropertyRef Name="worker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="userroles">
           <End Role="users" Type="Self.user" Multiplicity="*" />
           <End Role="roles" Type="Self.role" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="WorkersBenefitsDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WorkersBenefitsDB1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admin_person_settings" EntityType="Self.admin_person_settings" />
           <EntitySet Name="admin_persons" EntityType="Self.admin_persons" />
           <EntitySet Name="categories" EntityType="Self.category" />
@@ -683,6 +758,34 @@
           <EntitySet Name="worker_purchase_history" EntityType="Self.worker_purchase_history" />
           <EntitySet Name="worker_settings" EntityType="Self.worker_settings" />
           <EntitySet Name="workers" EntityType="Self.worker" />
+          <AssociationSet Name="admin_person_id_FK" Association="Self.admin_person_id_FK">
+            <End Role="admin_persons" EntitySet="admin_persons" />
+            <End Role="admin_person_settings" EntitySet="admin_person_settings" />
+          </AssociationSet>
+          <AssociationSet Name="category_id" Association="Self.category_id">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="company_id" Association="Self.company_id">
+            <End Role="companies" EntitySet="companies" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+          <AssociationSet Name="company_id_FK" Association="Self.company_id_FK">
+            <End Role="companies" EntitySet="companies" />
+            <End Role="company_persons" EntitySet="company_persons" />
+          </AssociationSet>
+          <AssociationSet Name="company_person_id_FK" Association="Self.company_person_id_FK">
+            <End Role="company_persons" EntitySet="company_persons" />
+            <End Role="company_person_settings" EntitySet="company_person_settings" />
+          </AssociationSet>
+          <AssociationSet Name="workier_id_fk" Association="Self.workier_id_fk">
+            <End Role="workers" EntitySet="workers" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="product_type_id" Association="Self.product_type_id">
+            <End Role="product_types" EntitySet="product_types" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
           <AssociationSet Name="ApplicationUser_Claims" Association="Self.ApplicationUser_Claims">
             <End Role="users" EntitySet="users" />
             <End Role="userclaims" EntitySet="userclaims" />
@@ -691,161 +794,21 @@
             <End Role="users" EntitySet="users" />
             <End Role="userlogins" EntitySet="userlogins" />
           </AssociationSet>
+          <AssociationSet Name="worker_id_fk1" Association="Self.worker_id_fk1">
+            <End Role="workers" EntitySet="workers" />
+            <End Role="worker_settings" EntitySet="worker_settings" />
+          </AssociationSet>
           <AssociationSet Name="userroles" Association="Self.userroles">
             <End Role="users" EntitySet="users" />
             <End Role="roles" EntitySet="roles" />
           </AssociationSet>
-          <AssociationSet Name="admin_person_id_FK" Association="WorkersBenefitsDBModels.admin_person_id_FK">
-            <End Role="admin_persons" EntitySet="admin_persons" />
-            <End Role="admin_person_settings" EntitySet="admin_person_settings" />
-          </AssociationSet>
-          <AssociationSet Name="category_id" Association="WorkersBenefitsDBModels.category_id">
-            <End Role="category" EntitySet="categories" />
-            <End Role="product" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="company_id" Association="WorkersBenefitsDBModels.company_id">
-            <End Role="company" EntitySet="companies" />
-            <End Role="worker" EntitySet="workers" />
-          </AssociationSet>
-          <AssociationSet Name="company_id_FK" Association="WorkersBenefitsDBModels.company_id_FK">
-            <End Role="company" EntitySet="companies" />
-            <End Role="company_persons" EntitySet="company_persons" />
-          </AssociationSet>
-          <AssociationSet Name="company_person_id_FK" Association="WorkersBenefitsDBModels.company_person_id_FK">
-            <End Role="company_persons" EntitySet="company_persons" />
-            <End Role="company_person_settings" EntitySet="company_person_settings" />
-          </AssociationSet>
-          <AssociationSet Name="workier_id_fk" Association="WorkersBenefitsDBModels.workier_id_fk">
-            <End Role="worker" EntitySet="workers" />
-            <End Role="order" EntitySet="orders" />
-          </AssociationSet>
-          <AssociationSet Name="product_type_id" Association="WorkersBenefitsDBModels.product_type_id">
-            <End Role="product_types" EntitySet="product_types" />
-            <End Role="product" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="product_id_fk" Association="WorkersBenefitsDBModels.product_id_fk">
-            <End Role="product" EntitySet="products" />
-            <End Role="worker_purchase_history" EntitySet="worker_purchase_history" />
-          </AssociationSet>
-          <AssociationSet Name="worker_id_fk1" Association="WorkersBenefitsDBModels.worker_id_fk1">
-            <End Role="worker" EntitySet="workers" />
-            <End Role="worker_settings" EntitySet="worker_settings" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="admin_person_id_FK">
-          <End Type="WorkersBenefitsDBModels.admin_persons" Role="admin_persons" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.admin_person_settings" Role="admin_person_settings" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="admin_persons">
-              <PropertyRef Name="admin_person_id" />
-            </Principal>
-            <Dependent Role="admin_person_settings">
-              <PropertyRef Name="admin_person_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="category_id">
-          <End Type="WorkersBenefitsDBModels.category" Role="category" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.product" Role="product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category">
-              <PropertyRef Name="category_id" />
-            </Principal>
-            <Dependent Role="product">
-              <PropertyRef Name="category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="company_id">
-          <End Type="WorkersBenefitsDBModels.company" Role="company" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="company">
-              <PropertyRef Name="company_id" />
-            </Principal>
-            <Dependent Role="worker">
-              <PropertyRef Name="company_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="company_id_FK">
-          <End Type="WorkersBenefitsDBModels.company" Role="company" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.company_persons" Role="company_persons" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="company">
-              <PropertyRef Name="company_id" />
-            </Principal>
-            <Dependent Role="company_persons">
-              <PropertyRef Name="company_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="company_person_id_FK">
-          <End Type="WorkersBenefitsDBModels.company_persons" Role="company_persons" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.company_person_settings" Role="company_person_settings" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="company_persons">
-              <PropertyRef Name="company_person_id" />
-            </Principal>
-            <Dependent Role="company_person_settings">
-              <PropertyRef Name="company_person_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="workier_id_fk">
-          <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.order" Role="order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="worker">
-              <PropertyRef Name="worker_id" />
-            </Principal>
-            <Dependent Role="order">
-              <PropertyRef Name="worker_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="product_type_id">
-          <End Type="WorkersBenefitsDBModels.product_types" Role="product_types" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.product" Role="product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product_types">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="product">
-              <PropertyRef Name="product_type_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="product_id_fk">
-          <End Type="WorkersBenefitsDBModels.product" Role="product" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.worker_purchase_history" Role="worker_purchase_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="worker_purchase_history">
-              <PropertyRef Name="product_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="worker_id_fk1">
-          <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="1" />
-          <End Type="WorkersBenefitsDBModels.worker_settings" Role="worker_settings" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="worker">
-              <PropertyRef Name="worker_id" />
-            </Principal>
-            <Dependent Role="worker_settings">
-              <PropertyRef Name="worker_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WorkersBenefitsDBModelsStoreContainer" CdmEntityContainer="WorkersBenefitsDB">
+        <EntityContainerMapping StorageEntityContainer="WorkersBenefitsDBModelsStoreContainer" CdmEntityContainer="WorkersBenefitsDB1">
           <EntitySetMapping Name="admin_person_settings">
             <EntityTypeMapping TypeName="WorkersBenefitsDBModels.admin_person_settings">
               <MappingFragment StoreEntitySet="admin_person_settings">
@@ -908,15 +871,14 @@
           <EntitySetMapping Name="company_persons">
             <EntityTypeMapping TypeName="WorkersBenefitsDBModels.company_persons">
               <MappingFragment StoreEntitySet="company_persons">
-                <ScalarProperty Name="company_id" ColumnName="company_id" />
                 <ScalarProperty Name="company_person_id" ColumnName="company_person_id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="last_update" ColumnName="last_update" />
-                <ScalarProperty Name="workerscol" ColumnName="workerscol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -943,9 +905,9 @@
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="WorkersBenefitsDBModels.product">
               <MappingFragment StoreEntitySet="products">
-                <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
-                <ScalarProperty Name="category_id" ColumnName="category_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="price" ColumnName="price" />
@@ -1003,11 +965,11 @@
           <EntitySetMapping Name="worker_purchase_history">
             <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker_purchase_history">
               <MappingFragment StoreEntitySet="worker_purchase_history">
-                <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
                 <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
                 <ScalarProperty Name="final_price" ColumnName="final_price" />
+                <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -66,7 +66,6 @@
     <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="active" Type="bit" Nullable="false" />
     <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="workerscol" Type="varchar" MaxLength="45" />
   </EntityType>
   <EntityType Name="orders">
     <Key>
@@ -302,18 +301,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="product_id_fk">
-    <End Role="products" Type="Self.products" Multiplicity="1" />
-    <End Role="worker_purchase_history" Type="Self.worker_purchase_history" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="products">
-        <PropertyRef Name="product_id" />
-      </Principal>
-      <Dependent Role="worker_purchase_history">
-        <PropertyRef Name="product_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="product_type_id">
     <End Role="product_types" Type="Self.product_types" Multiplicity="1" />
     <End Role="products" Type="Self.products" Multiplicity="*" />
@@ -403,10 +390,6 @@
     <AssociationSet Name="IdentityRole_Users" Association="Self.IdentityRole_Users">
       <End Role="roles" EntitySet="roles" />
       <End Role="userroles" EntitySet="userroles" />
-    </AssociationSet>
-    <AssociationSet Name="product_id_fk" Association="Self.product_id_fk">
-      <End Role="products" EntitySet="products" />
-      <End Role="worker_purchase_history" EntitySet="worker_purchase_history" />
     </AssociationSet>
     <AssociationSet Name="product_type_id" Association="Self.product_type_id">
       <End Role="product_types" EntitySet="product_types" />

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  emx.workersbenefits.core:
+    image: emx.workersbenefits.core
+    build:
+      context: ./EMX.WorkersBenefits.Core
+      dockerfile: Dockerfile
+
+  emx.workersbenefits.core.api:
+    image: emx.workersbenefits.core.api
+    build:
+      context: ./EMX.WorkersBenefits.Core.API
+      dockerfile: Dockerfile

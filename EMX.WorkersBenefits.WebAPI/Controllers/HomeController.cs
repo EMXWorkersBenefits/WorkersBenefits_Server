@@ -14,5 +14,10 @@ namespace EMX.WorkersBenefits.WebAPI.Controllers
 
             return View();
         }
+
+        public ActionResult Test()
+        {
+            return Content("Test OK");
+        }
     }
 }

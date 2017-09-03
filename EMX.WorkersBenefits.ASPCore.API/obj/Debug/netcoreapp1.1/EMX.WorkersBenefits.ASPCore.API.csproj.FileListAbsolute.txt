@@ -1,0 +1,10 @@
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\bin\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.deps.json
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\bin\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.runtimeconfig.json
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\bin\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.runtimeconfig.dev.json
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\bin\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\bin\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\obj\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.csprojResolveAssemblyReference.cache
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\obj\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.AssemblyInfo.cs
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\obj\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ASPCore.API\obj\Debug\netcoreapp1.1\EMX.WorkersBenefits.ASPCore.API.pdb

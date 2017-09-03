@@ -1,0 +1,5 @@
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\EMX.WorkersBenefits.Shared.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\EMX.WorkersBenefits.Shared.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.csproj.CoreCompileInputs.cache

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  emx.workersbenefits.core:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  emx.workersbenefits.core.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

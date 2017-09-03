@@ -1,0 +1,10 @@
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EMX.WorkersBenefits.BL.dll.config
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EMX.WorkersBenefits.BL.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EMX.WorkersBenefits.BL.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EntityFramework.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EntityFramework.xml
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\obj\Debug\EMX.WorkersBenefits.BL.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\obj\Debug\EMX.WorkersBenefits.BL.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.BL\obj\Debug\EMX.WorkersBenefits.BL.csproj.CoreCompileInputs.cache

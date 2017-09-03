@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WorkersBenefitsDBModelsStoreContainer" CdmEntityContainer="WorkersBenefitsDB">
+    <EntitySetMapping Name="admin_person_settings">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.admin_person_settings">
+        <MappingFragment StoreEntitySet="admin_person_settings">
+          <ScalarProperty Name="setting_id" ColumnName="setting_id" />
+          <ScalarProperty Name="admin_person_id" ColumnName="admin_person_id" />
+          <ScalarProperty Name="setting_key" ColumnName="setting_key" />
+          <ScalarProperty Name="settings_value" ColumnName="settings_value" />
+          <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_persons">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.admin_persons">
+        <MappingFragment StoreEntitySet="admin_persons">
+          <ScalarProperty Name="admin_person_id" ColumnName="admin_person_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="magnitude" ColumnName="magnitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="companies">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.company">
+        <MappingFragment StoreEntitySet="companies">
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="contact_person_name" ColumnName="contact_person_name" />
+          <ScalarProperty Name="contact_person_phone" ColumnName="contact_person_phone" />
+          <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_person_settings">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.company_person_settings">
+        <MappingFragment StoreEntitySet="company_person_settings">
+          <ScalarProperty Name="setting_id" ColumnName="setting_id" />
+          <ScalarProperty Name="company_person_id" ColumnName="company_person_id" />
+          <ScalarProperty Name="setting_key" ColumnName="setting_key" />
+          <ScalarProperty Name="settings_value" ColumnName="settings_value" />
+          <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_persons">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.company_persons">
+        <MappingFragment StoreEntitySet="company_persons">
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="company_person_id" ColumnName="company_person_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="workerscol" ColumnName="workerscol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.order">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="credit_card_auth_id" ColumnName="credit_card_auth_id" />
+          <ScalarProperty Name="charge_amount" ColumnName="charge_amount" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_types">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.product_types">
+        <MappingFragment StoreEntitySet="product_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="restrictions" ColumnName="restrictions" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="popup" ColumnName="popup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userclaims">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.userclaim">
+        <MappingFragment StoreEntitySet="userclaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userlogins">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.userlogin">
+        <MappingFragment StoreEntitySet="userlogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="worker_purchase_history">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker_purchase_history">
+        <MappingFragment StoreEntitySet="worker_purchase_history">
+          <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+          <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="final_price" ColumnName="final_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="worker_settings">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker_settings">
+        <MappingFragment StoreEntitySet="worker_settings">
+          <ScalarProperty Name="setting_id" ColumnName="setting_id" />
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="setting_key" ColumnName="setting_key" />
+          <ScalarProperty Name="settings_value" ColumnName="settings_value" />
+          <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workers">
+      <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker">
+        <MappingFragment StoreEntitySet="workers">
+          <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="worker_number" ColumnName="worker_number" />
+          <ScalarProperty Name="id_number" ColumnName="id_number" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="userroles" TypeName="WorkersBenefitsDBModels.userroles" StoreEntitySet="userroles">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="roles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

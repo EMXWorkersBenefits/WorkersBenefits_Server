@@ -13,6 +13,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.DAL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.Shared", "EMX.WorkersBenefits.Shared\EMX.WorkersBenefits.Shared.csproj", "{D869B156-5CDE-4B6E-9316-C77CCFCD9336}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.MVC", "EMX.WorkersBenefits.MVC\EMX.WorkersBenefits.MVC.csproj", "{B2875441-F663-4101-BB7A-F1C3F5BFF302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.MVC.Tests", "EMX.WorkersBenefits.MVC.Tests\EMX.WorkersBenefits.MVC.Tests.csproj", "{03EEB116-4309-4CCB-91E6-43B6F3B8BFCF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMX.WorkersBenefits.ASPCore.API", "EMX.WorkersBenefits.ASPCore.API\EMX.WorkersBenefits.ASPCore.API.csproj", "{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.Admin.MVC", "EMX.WorkersBenefits.Admin.MVC\EMX.WorkersBenefits.Admin.MVC.csproj", "{80B7AD73-1F97-436F-8A44-173004A2016A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.SPA.API", "EMX.WorkersBenefits.SPA.API\EMX.WorkersBenefits.SPA.API.csproj", "{D6491158-11F9-4E3E-9C7B-302D441473D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.SPA.API.Tests", "EMX.WorkersBenefits.SPA.API.Tests\EMX.WorkersBenefits.SPA.API.Tests.csproj", "{6AEDACB5-B515-4885-8D57-4748C0158FE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unload", "Unload", "{DA7CFA5D-7042-4556-BA2F-089D7CC34280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +53,43 @@ Global
 		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D869B156-5CDE-4B6E-9316-C77CCFCD9336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2875441-F663-4101-BB7A-F1C3F5BFF302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2875441-F663-4101-BB7A-F1C3F5BFF302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2875441-F663-4101-BB7A-F1C3F5BFF302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2875441-F663-4101-BB7A-F1C3F5BFF302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03EEB116-4309-4CCB-91E6-43B6F3B8BFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03EEB116-4309-4CCB-91E6-43B6F3B8BFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03EEB116-4309-4CCB-91E6-43B6F3B8BFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03EEB116-4309-4CCB-91E6-43B6F3B8BFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B7AD73-1F97-436F-8A44-173004A2016A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B7AD73-1F97-436F-8A44-173004A2016A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B7AD73-1F97-436F-8A44-173004A2016A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B7AD73-1F97-436F-8A44-173004A2016A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6491158-11F9-4E3E-9C7B-302D441473D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6491158-11F9-4E3E-9C7B-302D441473D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6491158-11F9-4E3E-9C7B-302D441473D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6491158-11F9-4E3E-9C7B-302D441473D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8CDA7087-6244-4DEF-975F-6D807B623970} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+		{3F549302-C96E-4460-91DD-4C27277A4A15} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+		{D6491158-11F9-4E3E-9C7B-302D441473D0} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+		{6AEDACB5-B515-4885-8D57-4748C0158FE1} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
+		SccNumberOfProjects = 12
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://oahdout85.visualstudio.com/
 		SccLocalPath0 = .
@@ -63,5 +108,23 @@ Global
 		SccProjectUniqueName5 = EMX.WorkersBenefits.Shared\\EMX.WorkersBenefits.Shared.csproj
 		SccProjectName5 = EMX.WorkersBenefits.Shared
 		SccLocalPath5 = EMX.WorkersBenefits.Shared
+		SccProjectUniqueName6 = EMX.WorkersBenefits.MVC\\EMX.WorkersBenefits.MVC.csproj
+		SccProjectName6 = EMX.WorkersBenefits.MVC
+		SccLocalPath6 = EMX.WorkersBenefits.MVC
+		SccProjectUniqueName7 = EMX.WorkersBenefits.MVC.Tests\\EMX.WorkersBenefits.MVC.Tests.csproj
+		SccProjectName7 = EMX.WorkersBenefits.MVC.Tests
+		SccLocalPath7 = EMX.WorkersBenefits.MVC.Tests
+		SccProjectUniqueName8 = EMX.WorkersBenefits.ASPCore.API\\EMX.WorkersBenefits.ASPCore.API.csproj
+		SccProjectName8 = EMX.WorkersBenefits.ASPCore.API
+		SccLocalPath8 = EMX.WorkersBenefits.ASPCore.API
+		SccProjectUniqueName9 = EMX.WorkersBenefits.Admin.MVC\\EMX.WorkersBenefits.Admin.MVC.csproj
+		SccProjectName9 = EMX.WorkersBenefits.Admin.MVC
+		SccLocalPath9 = EMX.WorkersBenefits.Admin.MVC
+		SccProjectUniqueName10 = EMX.WorkersBenefits.SPA.API\\EMX.WorkersBenefits.SPA.API.csproj
+		SccProjectName10 = EMX.WorkersBenefits.SPA.API
+		SccLocalPath10 = EMX.WorkersBenefits.SPA.API
+		SccProjectUniqueName11 = EMX.WorkersBenefits.SPA.API.Tests\\EMX.WorkersBenefits.SPA.API.Tests.csproj
+		SccProjectName11 = EMX.WorkersBenefits.SPA.API.Tests
+		SccLocalPath11 = EMX.WorkersBenefits.SPA.API.Tests
 	EndGlobalSection
 EndGlobal

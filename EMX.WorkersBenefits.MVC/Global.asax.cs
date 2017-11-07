@@ -22,14 +22,12 @@ namespace EMX.WorkersBenefits.MVC
             //Debugger.Launch();
             //log4net:
             log4net.Config.XmlConfigurator.Configure();
-
             //Mvc:
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             //other:
             AutoMapperConfig.Config();
             NinjectConfig.Config();

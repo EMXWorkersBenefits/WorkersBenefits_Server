@@ -32,8 +32,10 @@ namespace EMX.WorkersBenefits.DAL.Models
         public string last_name { get; set; }
         public string email { get; set; }
         public string phone_number { get; set; }
-        public bool active { get; set; }
-        public System.DateTime last_update { get; set; }
+        public Nullable<bool> active { get; set; }
+        public Nullable<System.DateTime> last_update { get; set; }
+        public Nullable<bool> registered { get; set; }
+        public Nullable<System.DateTime> register_date { get; set; }
     
         public virtual company company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

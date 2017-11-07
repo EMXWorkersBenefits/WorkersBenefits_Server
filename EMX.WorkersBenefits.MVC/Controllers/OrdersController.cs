@@ -14,7 +14,7 @@ namespace EMX.WorkersBenefits.MVC.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            int workerId = UserStateManager.WorkerId;
+            int workerId = UserStateManager.Instance.WorkerId;
             return View(ProductsBL.GetOrders(workerId));
         }
 

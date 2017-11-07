@@ -2,7 +2,6 @@ C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\EMX.Wo
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\EMX.WorkersBenefits.Shared.pdb
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\log4net.dll
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\bin\Debug\log4net.xml
-C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.csprojResolveAssemblyReference.cache
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.csproj.CoreCompileInputs.cache
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.dll
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.Shared\obj\Debug\EMX.WorkersBenefits.Shared.pdb

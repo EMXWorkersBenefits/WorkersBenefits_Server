@@ -20,7 +20,7 @@ namespace EMX.WorkersBenefits.MVC.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            int worker_Id = UserStateManager.WorkerId;
+            int worker_Id = UserStateManager.Instance.WorkerId;
             var all = VouchersBL.GetAll(worker_Id);
             return View(all);
         }

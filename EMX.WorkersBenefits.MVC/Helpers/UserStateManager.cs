@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using EMX.WorkersBenefits.BL.Managers;
 using EMX.WorkersBenefits.BL.ServiceObjects;
 using EMX.WorkersBenefits.Shared.Definitions;
 
@@ -9,19 +10,93 @@ namespace EMX.WorkersBenefits.MVC.Helpers
 {
     /// <summary>
     /// Handles all actions around the user state management (MyBasket, etc.)
+    /// Note: This is session-scoped.
     /// </summary>
-    public static class UserStateManager
+    public class UserStateManager : IUserStateManager
     {
-        public static Enums.UserType UserType { get; set; }
-        public static int Identity_UserId { get; set; }
-        public static int WorkerId { get; set; }
-        public static MyBasket Basket { get; set; }
 
-        static UserStateManager()
+        #region SingleTon
+
+        private static UserStateManager _instance;
+
+        public static UserStateManager Instance
         {
-            Basket = new MyBasket();
+            get
+            {
+
+                if (_instance == null)
+                {
+                    _instance = new UserStateManager();
+                }
+                return _instance;
+            }
         }
 
+        #endregion
+
+        /// <summary>
+        /// The logged in user type: worker, company person, admin person.
+        /// </summary>
+        public Enums.UserType UserType { get; set; }
+        /// <summary>
+        /// Holds the identity user id; applies to all user types.
+        /// </summary>
+        public int Identity_UserId { get; set; }
+        /// <summary>
+        /// only applies for worker.
+        /// -1 for none.
+        /// </summary>
+        public int WorkerId { get; set; }
+        /// <summary>
+        /// only applies for company person.
+        /// -1 for none.
+        /// </summary>
+        public int CompanyId { get; set; }
+        /// <summary>
+        /// only applies for company person.
+        /// -1 for none.
+        /// </summary>
+        public int CompanyPersonId { get; set; }
+        /// <summary>
+        /// only applies for worker.
+        /// </summary>
+        public MyBasket Basket { get; set; }
+
+        private UserStateManager()
+        {
+            Basket = new MyBasket();
+            WorkerId = -1;
+            CompanyId = -1;
+            CompanyPersonId = -1;
+        }
+
+        public void SetSessionValue(string key, string value)
+        {
+            HttpContext.Current.Session[key] = value;
+        }
+
+        public object GetSessionValue(string key)
+        {
+            object obj = HttpContext.Current.Session[key];
+            return obj;
+        }
+
+        public string GetSessionValueAsString(string key)
+        {
+            return GetSessionValue(key)?.ToString();
+        }
+
+        #region IUserStateManager implementation
+        string IUserStateManager.Get(string key)
+        {
+            return GetSessionValueAsString(key);
+        }
+
+        void IUserStateManager.Set(string key, string value)
+        {
+            SetSessionValue(key, value);
+        }
+        #endregion
     }
 
     public class MyBasket

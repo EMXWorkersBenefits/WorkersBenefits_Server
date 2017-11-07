@@ -240,6 +240,8 @@
     <EntitySetMapping Name="workers">
       <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker">
         <MappingFragment StoreEntitySet="workers">
+          <ScalarProperty Name="register_date" ColumnName="register_date" />
+          <ScalarProperty Name="registered" ColumnName="registered" />
           <ScalarProperty Name="last_update" ColumnName="last_update" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="phone_number" ColumnName="phone_number" />

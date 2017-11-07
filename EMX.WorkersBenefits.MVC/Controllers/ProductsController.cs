@@ -70,7 +70,7 @@ namespace EMX.WorkersBenefits.MVC.Controllers
         /// <summary>
         /// Returns all categories
         /// </summary>
-        public ActionResult GetAllCategories() => Json(ProductsBL.GetAllCatergories());
+        public ActionResult GetAllCategories() => Json(ProductsBL.GetAllCategories());
 
         /// <summary>
         /// Returns the suggestions list for the search panel.

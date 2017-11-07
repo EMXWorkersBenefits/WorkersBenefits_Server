@@ -1,0 +1,163 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  font-family: 'Alef', sans-serif;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: transparent;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  /*border: 1px solid #888;*/
+  width: 40%; /* Could be more or less, depending on screen size */
+  height: 60%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  font-size: 32px;
+  background-color: black;
+  font-weight: bold;
+  float: left;
+  width: 30px;
+  padding: 5px;
+  }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #517fa4;
+}
+
+.modal-content {
+  box-shadow: none;
+  border: none;
+}
+
+.sign-in {
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+
+.login {
+  width: 50%;
+  height: 100%;
+  background-color: #517fa4;
+  text-align: center;
+}
+
+
+.fa {
+ font-size: 60px;
+  margin-top: 10px;
+}
+
+.fa-user-plus {
+  color: white;
+}
+
+.fa-user {
+  color: #e67e22;
+}
+
+.header-text {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.sign-in .textbox-field:not(:last-child) {
+  background-color: #bdc3c7;
+}
+
+.header-login {
+  color: white;
+}
+
+.header-sign-in {
+  color: #e67e22;
+}
+
+.textbox-field {
+  width: 160px;
+  height: 40px;
+  background-color: #ffffff;
+  direction: rtl;
+  text-align: center;
+  border-radius: 0.2em;
+  border: none;
+  font-size: 15px;
+  font-weight: 300;
+  margin-right: -3px;
+  padding: 3px 0px;
+  margin-bottom: 10px;
+}
+
+.orange-button {
+  background-color: #e67e22;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.orange-button:hover {
+  background-color: #cf6d17;
+}
+
+.blue-button {
+  background-color: #517fa4;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.blue-button:hover {
+  background-color: #2e5581;
+}
+
+.forgot-password {
+  display: block;
+  vertical-align: bottom;
+  color: #bdc3c7;
+  font-size: 18px;
+  text-decoration: underline;
+  direction: rtl;
+  font-weight: 700;
+}
+
+.open-modal {
+  border: none;
+  background-color: transparent;
+  margin-left: 15px;
+}
+
+

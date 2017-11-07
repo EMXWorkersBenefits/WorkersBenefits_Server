@@ -9,7 +9,7 @@ C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\MySql.Dat
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\EntityFramework.xml
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\bin\Debug\log4net.xml
-C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.csprojResolveAssemblyReference.cache
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.csproj.CoreCompileInputs.cache
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.dll
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.DAL\obj\Debug\EMX.WorkersBenefits.DAL.csprojResolveAssemblyReference.cache

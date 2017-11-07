@@ -245,8 +245,10 @@
           <Property Name="last_name" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="active" Type="bit" Nullable="false" />
-          <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="active" Type="bit" />
+          <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+          <Property Name="registered" Type="bit" />
+          <Property Name="register_date" Type="datetime" Precision="0" />
         </EntityType>
         <Association Name="admin_person_id_FK">
           <End Role="admin_persons" Type="Self.admin_persons" Multiplicity="1" />
@@ -1009,8 +1011,10 @@
           <Property Name="last_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="active" Type="Boolean" Nullable="false" />
-          <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="last_update" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="registered" Type="Boolean" />
+          <Property Name="register_date" Type="DateTime" />
           <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id" FromRole="worker" ToRole="company" />
           <NavigationProperty Name="orders" Relationship="WorkersBenefitsDBModels.workier_id_fk" FromRole="worker" ToRole="order" />
           <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.user_id_2" FromRole="worker" ToRole="user" />
@@ -1511,6 +1515,8 @@
           <EntitySetMapping Name="workers">
             <EntityTypeMapping TypeName="WorkersBenefitsDBModels.worker">
               <MappingFragment StoreEntitySet="workers">
+                <ScalarProperty Name="register_date" ColumnName="register_date" />
+                <ScalarProperty Name="registered" ColumnName="registered" />
                 <ScalarProperty Name="last_update" ColumnName="last_update" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="phone_number" ColumnName="phone_number" />

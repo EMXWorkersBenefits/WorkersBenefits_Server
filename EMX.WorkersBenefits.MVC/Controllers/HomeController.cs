@@ -50,7 +50,7 @@ namespace EMX.WorkersBenefits.MVC.Controllers
         /// <returns></returns>
         public ActionResult GetCategories()
         {
-            return Json(ProductsBL.GetAllCatergories());
+            return Json(ProductsBL.GetAllCategories());
         }
 
         public ActionResult Contact()
@@ -69,7 +69,7 @@ namespace EMX.WorkersBenefits.MVC.Controllers
 
 
         //Company Point-of-view:::
-        [ActionName("Index")]
+        [ActionName("CompanyIndex")]
         public ActionResult CompanyIndex()
         {
             string clientMode = System.Configuration.ConfigurationManager.AppSettings["ClientMode"].ToString();

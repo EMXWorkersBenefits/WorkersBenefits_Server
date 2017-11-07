@@ -1,0 +1,50 @@
+<header>
+  <nav>
+    <div class="emx-header">
+      <div class="right-side">
+        <img src="../../../assets/img/emx-logo.png" alt="logo" class="logo-img">
+        <ul class="main-nav js--main-nav">
+          <li scrollTo scrollTargetSelector="#test-section"><a href="#">הפרופיל שלי</a></li>
+          <li><a href="#">צור קשר</a></li>
+          <li><a href="#">עמוד ראשי</a></li>
+        </ul>
+        <nav class="inner-nav">
+          <ul>
+            <li class="first-deg-li">
+              <a href="#" class="categories-drop-down-header"> הקטגוריות שלנו </a>
+              <ul class="sub-categories">
+                <li><a routerLink="/benefits/vacations"> <i class="fa fa-globe category-icon" aria-hidden="true"></i>  מסביב לעולם </a></li>
+                <li><a routerLink="/benefits/Electronics"><i class="fa fa-television category-icon" aria-hidden="true"></i> גאדג'טים
+                </a></li>
+                <li><a routerLink="/benefits/Concerts_n_Shows"><i class="fa fa-music category-icon" aria-hidden="true"></i> יוצאים לבלות
+                </a></li>
+                <li><a routerLink="/benefits/Fitness"><i class="fa fa-heart category-icon" aria-hidden="true"></i>  לגוף ולנפש
+                </a></li>
+                <li><a routerLink="/benefits/Restaurants"><i class="fa fa-cutlery category-icon" aria-hidden="true"></i> חווית קולינריות
+                </a></li>
+                <li><a routerLink="/benefits/Home_Interior"><i class="fa fa-home category-icon" aria-hidden="true"></i> שפר ביתך
+                </a></li>
+                <li><a routerLink="/benefits/Pets"><i class="fa fa-paw category-icon" aria-hidden="true"></i> חברים על ארבע
+                </a></li>
+                <li><a routerLink="/benefits/Spa_n_Beauty"><i class="fa fa-bath" aria-hidden="true"></i> בא לי להתפנק
+                </a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!--<a class="mobile-nav-icon js&#45;&#45;nav-icon"><i class="ion-navicon-round"></i></a>-->
+      </div>
+
+      <ul class="main-nav left-side">
+        <app-popup-modal></app-popup-modal>
+        <app-confirm-password-modal></app-confirm-password-modal>
+        <app-mail-password-modal></app-mail-password-modal>
+        <app-agreement-modal></app-agreement-modal>
+        <app-success-modal></app-success-modal>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+

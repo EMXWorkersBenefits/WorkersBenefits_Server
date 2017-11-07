@@ -82,6 +82,7 @@
     <Compile Include="ServiceObjects\Category.cs" />
     <Compile Include="ServiceObjects\Company.cs" />
     <Compile Include="ServiceObjects\CompanyPerson.cs" />
+    <Compile Include="ServiceObjects\FeaturedCategoriesList.cs" />
     <Compile Include="ServiceObjects\FeaturedProductsList.cs" />
     <Compile Include="ServiceObjects\Order.cs" />
     <Compile Include="ServiceObjects\Product.cs" />

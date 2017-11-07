@@ -50,6 +50,9 @@ namespace EMX.WorkersBenefits.BL.Managers
         }
     }
 
+    /// <summary>
+    /// Defines properties and methods for user-session-state management.
+    /// </summary>
     public interface IUserStateManager
     {
         string Get(string key);

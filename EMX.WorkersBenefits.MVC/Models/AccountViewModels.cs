@@ -62,8 +62,43 @@ namespace EMX.WorkersBenefits.MVC.Models
         public bool RememberMe { get; set; }
     }
 
+    public class InitialRegisterViewModel
+    {
+        [Required]
+        [Display(Name = "IdNumber")]
+        public string IdNumber { get; set; }
+
+        [Required]
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
+    }
+
+    public class InitialRegisterVerifiyViewModel
+    {
+        [Required]
+        [Display(Name = "IdNumber")]
+        public string IdNumber { get; set; }
+
+        [Required]
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Code")]
+        public string Code { get; set; }
+    }
+
+
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "IdNumber")]
+        public string IdNumber { get; set; }
+
+        [Required]
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

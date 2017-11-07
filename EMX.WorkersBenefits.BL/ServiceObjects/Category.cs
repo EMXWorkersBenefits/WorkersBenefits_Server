@@ -13,30 +13,33 @@ namespace EMX.WorkersBenefits.BL.ServiceObjects
         public string Name { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
-        public int? Precedence { get; set; }
+        public int Precedence { get; set; }   //precedence; 1 if null in db.
+        public List<Product> Products { get; set; }   //optional: products.
 
         public Category()
         {
-            
+            Products=new List<Product>();
         }
 
 
         public Category(category dbCategory)   //from db object to service object.
         {
             this.CategoryId = dbCategory.category_id;
-            this.Name = dbCategory. name;
+            this.Name = dbCategory.name;
             this.Title = dbCategory.title;
             this.Image = dbCategory.image;
-            this.Precedence = dbCategory.precedence;
+            this.Precedence = dbCategory.precedence.GetValueOrDefault(1);
+            Products = new List<Product>();
         }
 
-        public Category(int categoryId, string name, string title, string image, string visualName, int? precedence)
+        public Category(int categoryId, string name, string title, string image, string visualName, int precedence)
         {
             CategoryId = categoryId;
             Name = name;
             Title = title;
             Image = image;
             Precedence = precedence;
+            Products = new List<Product>();
         }
     }
 }

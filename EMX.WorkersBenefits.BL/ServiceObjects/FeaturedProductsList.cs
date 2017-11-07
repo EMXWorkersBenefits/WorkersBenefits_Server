@@ -14,25 +14,29 @@ namespace EMX.WorkersBenefits.BL.ServiceObjects
         }
     }
 
-    public class ProductsSearchResults : Dictionary<int, Product>       //Dictionary. Key: precedence (1-based), Value: product; up to 10 items.
+    public class ProductsSearchResults : Dictionary<int, Product>       //Dictionary. Key: precedence (1-based), Value: product;
     {
         public ProductsSearchResults(List<Product> data)
         {
+            int newPrecedence = 1;
             foreach (var item in data)
             {
-                this.Add(item.Precedence, item);
+                item.Precedence = newPrecedence;
+                this.Add(newPrecedence++, item);
             }
         }
         protected ProductsSearchResults(List<Product> data, int maxItems)
         {
             if (data.Count > maxItems)
             {
-                throw new Exception("more than 10 products in featured list");
+                throw new Exception($"more than {maxItems} products in featured list");
             }
 
+            int newPrecedence = 1;
             foreach (var item in data)
             {
-                this.Add(item.Precedence, item);
+                item.Precedence = newPrecedence;
+                this.Add(newPrecedence++, item);
             }
         }
     }

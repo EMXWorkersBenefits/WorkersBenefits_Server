@@ -1,0 +1,40 @@
+<div class="slider-container">
+    <!--<button type="button" class="btn btn-full">לפרטים ורכישה</button>-->
+  <div class="slider">
+    <div class="frames">
+      <div class="frame"
+           *ngFor="let frame of this.frames; let i = index"
+           [ngClass]="{'current': i === this.index}">
+        <img src="{{ frame.img }}" />
+        <div class="description">
+          <h2>{{ frame.description.title }}</h2>
+          <div class="details"> {{ frame.description.description }} </div>
+          <div class="price"> החל מ {{ frame.description.price }} ש"ח </div>
+        </div>
+      </div>
+    </div>
+    <div class="arrows-sides arrow-left" id="arrows-left" (click)="forward()">
+      <i class="fa fa-angle-left" id="arrow-left-icon" aria-hidden="true"></i>
+    </div>
+    <div class="arrows-sides arrow-left" id="arrows-right" (click)="backword()">
+      <i class="fa fa-angle-right" id="arrow-right-icon" aria-hidden="true"></i>
+    </div>
+    <!--<div class="arrows">-->
+      <!--<div class="edge-white">-->
+        <!--<i class="fa fa-angle-right" aria-hidden="true"></i>-->
+
+      <!--</div>-->
+      <!--<div class="edge-white">-->
+        <!--<i class="fa fa-angle-left" aria-hidden="true"></i>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="gestures">-->
+      <!--<div class="gesture"-->
+           <!--*ngFor="let frame of this.frames; let i = index"-->
+           <!--[ngClass]="{'current': i === this.index}"-->
+           <!--(click)="selectFrame(i)"></div>-->
+    <!--</div>-->
+    </div>
+  <!--<h3 >הקליק/י על התמונה להצגת ההטבה</h3>-->
+</div>
+

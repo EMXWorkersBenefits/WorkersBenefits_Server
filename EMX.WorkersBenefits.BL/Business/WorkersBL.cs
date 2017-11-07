@@ -66,6 +66,10 @@ namespace EMX.WorkersBenefits.BL.Business
             }
         }
 
+        /// <summary>
+        /// Preliminarily creates the worker (by company side)
+        /// </summary>
+        /// <param name="worker"></param>
         public static void CreateWorker(Worker worker)
         {
             try
@@ -108,6 +112,24 @@ namespace EMX.WorkersBenefits.BL.Business
             {
                 var workerToDelete = db.workers.Find(workerId);
                 db.workers.Remove(workerToDelete);
+                db.SaveChanges();
+            }
+        }
+
+        public static bool IsWorkerPreRegistered(string idNumber)
+        {
+            using (var db = new WorkersBenefitsDB2())
+            {
+                return db.workers.Any(item => item.id_number == idNumber);
+            }
+        }
+
+        public static void SetWorkerRegistered(string idNumber)
+        {
+            using (var db = new WorkersBenefitsDB2())
+            {
+                var workerToUpdate = db.workers.Single(item => item.id_number == idNumber);
+                db.Entry(workerToUpdate).State = EntityState.Modified;
                 db.SaveChanges();
             }
         }

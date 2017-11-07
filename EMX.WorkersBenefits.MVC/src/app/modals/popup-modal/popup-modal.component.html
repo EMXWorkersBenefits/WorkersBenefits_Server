@@ -1,0 +1,75 @@
+<!-- Trigger/Open The Modal -->
+<button class="open-modal" id="myBtn" (click)="onclickOpen()"> להצטרפות </button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div #modalContent class="modal-content">
+    <span class="close" (click)="onclickClose()">&times;</span>
+    <div class="modal-inner">
+      <div class="login">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+        <div class="header-text header-login">כניסה לחשבונך האישי</div>
+        <input
+          name="txtUserName"
+          type="text" maxlength="256"
+          id="txtUserName"
+          tabindex="1"
+          autocomplete="off"
+          placeholder="שם משתמש"
+          class="textbox-field"
+        >
+        <input
+          name="txtPassword"
+          type="text" maxlength="256"
+          id="txtPassword"
+          tabindex="1"
+          autocomplete="off"
+          placeholder="סיסמא"
+          class="textbox-field"
+        >
+        <input
+          type="submit"
+          name="btnLogin"
+          value=" כניסה >"
+          id="btnLogin"
+          class="textbox-field orange-button">
+
+        <a class="forgot-password"> שכחתי סיסמא > </a>
+      </div>
+      <div class="sign-in">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <div class="header-text header-sign-in"> הרשמה לשירות </div>
+        <input
+          name="txtUserName"
+          type="text" maxlength="256"
+          id="txtUserId"
+          tabindex="1"
+          autocomplete="off"
+          placeholder="ת.ז"
+          class="textbox-field"
+        >
+        <input
+          name="txtPassword"
+          type="text" maxlength="256"
+          id="txtPhone"
+          tabindex="1"
+          autocomplete="off"
+          placeholder="מס' טלפון"
+          class="textbox-field"
+        >
+        <button
+          type="submit"
+          name="btnLogin"
+          value=""
+          id="btnSignIn"
+          class="textbox-field blue-button"
+        (click)="signup()"> הרשמה >
+        </button>
+
+        <!--<a class="forgot-password"> שכחתי סיסמא > </a>-->
+      </div>
+    </div>
+  </div>
+</div>

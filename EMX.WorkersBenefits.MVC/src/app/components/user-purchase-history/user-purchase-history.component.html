@@ -1,0 +1,140 @@
+<div class="purchases-container">
+
+  <div class="sort-n-filter">
+    <div class="sort-purchases">
+      <div class="filters-header"> מיין לפי... </div>
+      <select class="sort-dropdown">
+        <option value="date"> תאריך רכישה </option>
+        <option value="expires"> תוקף </option>
+        <option value="price"> מחיר </option>
+      </select>
+    </div>
+    <div class="filter-purchases" >
+
+
+      <!--<hr class="style1">-->
+
+      <div class="filters-header"> סנן </div>
+      <div class="filter-by-category">
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Spa">
+          <span class="filter-text"> לגוף ולנפש  </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Pets">
+          <span class="filter-text"> חברים על ארבע </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Restaurants">
+          <span class="filter-text"> חוויות קולינריות </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Vacations">
+          <span class="filter-text"> מסביב לעולם  </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Concerts">
+          <span class="filter-text"> יוצאים לבלות </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Electronics">
+          <span class="filter-text"> גאדג'טים </span>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="category" value="Home">
+          <span class="filter-text"> שפר ביתך </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="purchases">
+
+    <div class="purchase"
+        *ngFor="let purchase of purchases">
+
+      <div class="purchase-box">
+        <div class="purchase-row purchase-first-row">
+          <div class="purchase-col first">
+            <!--{{ purchase.deal }}-->
+            <img src="{{ purchase.img }}" class="purchase-img" />
+          </div>
+          <div class="purchase-col">
+            <button class="additional-details btn-empty"> לפרטים נוספים </button>
+            <button class="additional-details emx-btn btn-full"> לרכישה </button>
+          </div>
+        </div>
+
+        <!--<hr class="style1">-->
+        <div class="horizontal-line"></div>
+
+        <div class="purchase-row purchase-second-row">
+          <div class="second-row-headers">
+            <div class="purchase-col headers-col deal-name">{{ purchase.deal }}</div>
+            <div class="purchase-col headers-col"> טלפון של בית העסק </div>
+            <div class="purchase-col headers-col">בתוקף עד: </div>
+          </div>
+          <div class="second-row-info">
+            <div class="purchase-col headers-col"> {{ purchase.desc | shorten }}</div>
+            <div class="purchase-col headers-col"> <i class="fa fa-phone my-icons icon-small" aria-hidden="true"></i>  {{ purchase.phone }}</div>
+            <div class="purchase-col headers-col"> <i class="fa fa-clock-o my-icons icon-small" aria-hidden="true"></i>{{ purchase.expires }} </div>
+          </div>
+          <!--<div class="purchase-col">-->
+            <!--<div class="price-details">-->
+              <!--{{ purchase.price  }} ש"ח-->
+              <!--&lt;!&ndash;<b>  מחיר: </b>&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="price-details">&ndash;&gt;-->
+            <!--&lt;!&ndash;<b> גובה ההנחה: </b>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{purchase.discount+  "%" }}&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="price-details">&ndash;&gt;-->
+            <!--&lt;!&ndash;<b> בעסקה זו חסכת: </b>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{purchase.expires}}&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--</div>-->
+
+          <!--<div class="purchase-col">-->
+            <!--&lt;!&ndash;<div class="desc">&ndash;&gt;-->
+            <!--&lt;!&ndash;<b>  פרטי העסקה: </b>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ purchase.desc }}&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<hr class="style13">&ndash;&gt;-->
+            <!--<div class="phone-feature">-->
+              <!--<i class="fa fa-phone my-icons icon-small" aria-hidden="true"></i>-->
+              <!--{{purchase.phone + "     " }}-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="purchase-col">-->
+            <!--<div class="purchased"-->
+                 <!--*ngIf="purchase.purchased ; else toPurchase">-->
+              <!--<i class="fa fa-check check-icon" aria-hidden="true"></i>-->
+            <!--</div>-->
+            <!--<ng-template #toPurchase>-->
+              <!--<div class="btn-wrapper">-->
+                <!--<a class="btn btn-full js&#45;&#45;scroll-to-plans" href="#">לרכישה</a>-->
+              <!--</div>-->
+            <!--</ng-template>-->
+            <!--<div class="expires">-->
+              <!--<br>-->
+
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="purchase-col">-->
+            <!--<div class="expires">-->
+              <!--<b>  בתוקף עד: </b>-->
+              <!--{{ purchase.purchased}}-->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+
+
+      </div>
+      <hr>
+    </div>
+  </div>
+
+</div>

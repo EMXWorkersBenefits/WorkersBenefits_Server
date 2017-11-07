@@ -19,7 +19,17 @@ namespace EMX.WorkersBenefits.BL.ServiceObjects
         }
         public static worker ToDB(this Worker item)
         {
-            return new worker() { };   //todo fill object
+            var worker = new worker();
+            worker.worker_id = item.WorkerId;
+            worker.identity_user_id = item.Identity_UserID;
+            worker.first_name = item.FirstName;
+            worker.last_name = item.LastName;
+            worker.phone_number = item.PhoneNumber;
+            worker.id_number = item.IdNumber;
+            worker.email = item.Email;
+            worker.company_id = item.CompanyId;
+
+            return worker;
         }
         public static Category ToSvc(this category item)
         {

@@ -2,6 +2,7 @@
 using System.Linq;
 using EMX.WorkersBenefits.BL.ServiceObjects;
 using EMX.WorkersBenefits.DAL.Models;
+using System.Data.Entity;
 
 namespace EMX.WorkersBenefits.BL.Business
 {
@@ -19,6 +20,31 @@ namespace EMX.WorkersBenefits.BL.Business
                     .Select(ServiceObjectsExtensions.ToSvc)
                     .OrderBy(item => item.Precedence).ToList();
                 return new FeaturedProductsList(items);    //todo. add random
+            }
+        }
+
+        public static FeaturedCategoriesList GetFeaturedCategories()
+        {
+            return GetFeaturedCategories(false);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="full">if fill with their corresponding featured products</param>
+        /// <returns></returns>
+        public static FeaturedCategoriesList GetFeaturedCategories(bool full)
+        {
+            using (var db = new WorkersBenefitsDB2())
+            {
+                var items = db.categories.Take(5).AsEnumerable()
+                    .Select(ServiceObjectsExtensions.ToSvc)
+                    .OrderBy(item => item.Precedence).ToList();
+                for (int i = 0; i < items.Count; i++)   //Todo. nativize.
+                {
+                    items[i].Products = GetFeaturedProducts(items[i].CategoryId).Values.ToList();
+                }
+                return new FeaturedCategoriesList(items);    //todo. add random
             }
         }
 
@@ -44,7 +70,7 @@ namespace EMX.WorkersBenefits.BL.Business
         /// sequence is returned in the order of precedence.
         /// </summary>
         /// <returns></returns>
-        public static List<Category> GetAllCatergories()
+        public static List<Category> GetAllCategories()
         {
             using (var db = new WorkersBenefitsDB2())
             {

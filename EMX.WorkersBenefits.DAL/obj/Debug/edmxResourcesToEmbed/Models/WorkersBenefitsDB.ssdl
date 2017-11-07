@@ -240,8 +240,10 @@
     <Property Name="last_name" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="active" Type="bit" Nullable="false" />
-    <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="active" Type="bit" />
+    <Property Name="last_update" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="registered" Type="bit" />
+    <Property Name="register_date" Type="datetime" Precision="0" />
   </EntityType>
   <Association Name="admin_person_id_FK">
     <End Role="admin_persons" Type="Self.admin_persons" Multiplicity="1" />

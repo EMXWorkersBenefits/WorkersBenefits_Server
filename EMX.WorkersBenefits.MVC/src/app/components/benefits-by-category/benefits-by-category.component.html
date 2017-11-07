@@ -1,0 +1,64 @@
+<div class="benefits-container">
+
+  <div class="sort-benifits">
+    <div class="sort-box">
+      <label for="fader">Volume</label>
+      <input type="range" min="0" max="100" value="50" id="fader"
+      step="1" (input)="outputUpdate(value)" >
+      <output for="fader" id="volume">50</output>
+    </div>
+
+    <div class="sort-box">
+      <!--<label for="fader">Volume</label>-->
+      <!--<input type="range" min="0" max="5" value="3" id="fader" step="0.01">-->
+
+
+
+      <div class="sort-box-header"> מיין לפי </div>
+      <ul>
+        <li>
+          <input type="radio" id="f-option" name="selector">
+          <label for="f-option"> חדש </label>
+          <div class="check"></div>
+        </li>
+
+        <li>
+          <input type="radio" id="s-option" name="selector">
+          <label for="s-option"> מחיר (זול ליקר) </label>
+
+          <div class="check"><div class="inside"></div></div>
+        </li>
+
+        <li>
+          <input type="radio" id="t-option" name="selector">
+          <label for="t-option"> תוקף (מסתיים בקרןב) </label>
+
+          <div class="check"><div class="inside"></div></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sort-box dates">
+      <div class="sort-box-header">חפש תאריכים </div>
+      <label class="date-heading" for="start"> מתאריך: </label><i class="fa fa-calendar" aria-hidden="true"></i><input id="start" class="calendar" type="date" value="2011-01-13"/>
+      <label class="date-heading" for="end"> עד תאריך: </label><i class="fa fa-calendar" aria-hidden="true"></i><input id="end" class="calendar" type="date" value="2011-01-13"/>
+
+    </div>
+
+  </div>
+  <div class="benefits">
+    <div class="benefits-row" *ngFor="let row of benefits">
+      <div class="benefit-box" *ngFor="let benefit of row">
+          <div class="title details"> {{ benefit.title }} </div>
+          <img src="{{ benefit.image }}" class="purchase-img details" />
+          <div class="our-price details"> המחיר שלנו:  <b>{{ benefit.ourPrice }} ש"ח </b></div>
+          <div class="normal-price details"> מחיר מקורי:  <b>{{ benefit.normalPrice }}  ש"ח <div class="discount details"><u>({{ benefit.discount }}% הנחה</u></div>) </b></div>
+          <div class="short-desc details"> {{ benefit.shortDesc }} </div>
+          <div class="lower-part-wrapper">
+              <div class="details timer-countdown"> מהרו! נותרו רק עוד: <u>  {{ benefit.expires }}</u>  </div>
+              <button class="emx-btn btn-full details"> לרכישה </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

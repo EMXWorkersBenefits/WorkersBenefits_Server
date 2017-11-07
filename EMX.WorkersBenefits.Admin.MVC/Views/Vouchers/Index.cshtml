@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EMX.WorkersBenefits.DAL.Models.voucher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valid_start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valid_end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_updated)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valid_start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valid_end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_updated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.voucher_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.voucher_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.voucher_id })
+        </td>
+    </tr>
+}
+
+</table>

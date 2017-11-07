@@ -102,3 +102,4 @@ C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.SPA.API\bin\Microsoft.A
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.SPA.API\obj\Debug\EMX.WorkersBenefits.SPA.API.csprojResolveAssemblyReference.cache
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.SPA.API\obj\Debug\EMX.WorkersBenefits.SPA.API.dll
 C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.SPA.API\obj\Debug\EMX.WorkersBenefits.SPA.API.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.SPA.API\obj\Debug\EMX.WorkersBenefits.SPA.API.csproj.CoreCompileInputs.cache

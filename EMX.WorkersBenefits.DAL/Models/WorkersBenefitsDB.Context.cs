@@ -13,10 +13,10 @@ namespace EMX.WorkersBenefits.DAL.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WorkersBenefitsDB1 : DbContext
+    public partial class WorkersBenefitsDB2 : DbContext
     {
-        public WorkersBenefitsDB1()
-            : base("name=WorkersBenefitsDB1")
+        public WorkersBenefitsDB2()
+            : base("name=WorkersBenefitsDB2")
         {
         }
     
@@ -31,14 +31,18 @@ namespace EMX.WorkersBenefits.DAL.Models
         public virtual DbSet<company> companies { get; set; }
         public virtual DbSet<company_person_settings> company_person_settings { get; set; }
         public virtual DbSet<company_persons> company_persons { get; set; }
+        public virtual DbSet<global_settings> global_settings { get; set; }
+        public virtual DbSet<order_payments> order_payments { get; set; }
         public virtual DbSet<order> orders { get; set; }
-        public virtual DbSet<product_types> product_types { get; set; }
         public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<products_in_orders> products_in_orders { get; set; }
         public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<userclaim> userclaims { get; set; }
         public virtual DbSet<userlogin> userlogins { get; set; }
         public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<worker_purchase_history> worker_purchase_history { get; set; }
+        public virtual DbSet<voucher_grants> voucher_grants { get; set; }
+        public virtual DbSet<voucher_requests> voucher_requests { get; set; }
+        public virtual DbSet<voucher> vouchers { get; set; }
         public virtual DbSet<worker_settings> worker_settings { get; set; }
         public virtual DbSet<worker> workers { get; set; }
     }

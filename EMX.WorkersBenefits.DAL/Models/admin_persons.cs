@@ -21,6 +21,7 @@ namespace EMX.WorkersBenefits.DAL.Models
         }
     
         public int admin_person_id { get; set; }
+        public string identity_user_id { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string email { get; set; }
@@ -30,5 +31,6 @@ namespace EMX.WorkersBenefits.DAL.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<admin_person_settings> admin_person_settings { get; set; }
+        public virtual user user { get; set; }
     }
 }

@@ -1,0 +1,7 @@
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\bin\Debug\EMX.WorkersBenefits.ProxyServices.dll.config
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\bin\Debug\EMX.WorkersBenefits.ProxyServices.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\bin\Debug\EMX.WorkersBenefits.ProxyServices.pdb
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\obj\Debug\EMX.WorkersBenefits.ProxyServices.csprojResolveAssemblyReference.cache
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\obj\Debug\EMX.WorkersBenefits.ProxyServices.csproj.CoreCompileInputs.cache
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\obj\Debug\EMX.WorkersBenefits.ProxyServices.dll
+C:\WorkDrive\TFS\EMX\WorkersBenefits\EMX.WorkersBenefits.ProxyServices\obj\Debug\EMX.WorkersBenefits.ProxyServices.pdb

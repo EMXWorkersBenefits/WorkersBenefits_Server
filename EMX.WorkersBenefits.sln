@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.WebAPI", "EMX.WorkersBenefits.WebAPI\EMX.WorkersBenefits.WebAPI.csproj", "{8CDA7087-6244-4DEF-975F-6D807B623970}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.SPA.API.Tests", "EMX.WorkersBenefits.SPA.API.Tests\EMX.WorkersBenefits.SPA.API.Tests.csproj", "{6AEDACB5-B515-4885-8D57-4748C0158FE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unload", "Unload", "{DA7CFA5D-7042-4556-BA2F-089D7CC34280}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admin", "Admin", "{2A5B27D3-1D8F-4977-9799-E58A922C7FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMX.WorkersBenefits.ProxyServices", "EMX.WorkersBenefits.ProxyServices\EMX.WorkersBenefits.ProxyServices.csproj", "{AEE1EF98-A40D-4D28-96B6-4635868C3BB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AEDACB5-B515-4885-8D57-4748C0158FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE1EF98-A40D-4D28-96B6-4635868C3BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE1EF98-A40D-4D28-96B6-4635868C3BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE1EF98-A40D-4D28-96B6-4635868C3BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE1EF98-A40D-4D28-96B6-4635868C3BB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,18 +93,24 @@ Global
 		{8CDA7087-6244-4DEF-975F-6D807B623970} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
 		{3F549302-C96E-4460-91DD-4C27277A4A15} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
 		{9F06D8BE-AA58-418B-B0F5-8D2EFBF59807} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
+		{80B7AD73-1F97-436F-8A44-173004A2016A} = {2A5B27D3-1D8F-4977-9799-E58A922C7FF5}
 		{D6491158-11F9-4E3E-9C7B-302D441473D0} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
 		{6AEDACB5-B515-4885-8D57-4748C0158FE1} = {DA7CFA5D-7042-4556-BA2F-089D7CC34280}
 	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4750F9A4-FFD6-4342-B34B-54794C14E6D0}
+	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
+		SccNumberOfProjects = 13
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://oahdout85.visualstudio.com/
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = EMX.WorkersBenefits.WebAPI.Tests\\EMX.WorkersBenefits.WebAPI.Tests.csproj
+		SccProjectTopLevelParentUniqueName1 = EMX.WorkersBenefits.sln
 		SccProjectName1 = EMX.WorkersBenefits.WebAPI.Tests
 		SccLocalPath1 = EMX.WorkersBenefits.WebAPI.Tests
 		SccProjectUniqueName2 = EMX.WorkersBenefits.WebAPI\\EMX.WorkersBenefits.WebAPI.csproj
+		SccProjectTopLevelParentUniqueName2 = EMX.WorkersBenefits.sln
 		SccProjectName2 = EMX.WorkersBenefits.WebAPI
 		SccLocalPath2 = EMX.WorkersBenefits.WebAPI
 		SccProjectUniqueName3 = EMX.WorkersBenefits.BL\\EMX.WorkersBenefits.BL.csproj
@@ -115,16 +129,23 @@ Global
 		SccProjectName7 = EMX.WorkersBenefits.MVC.Tests
 		SccLocalPath7 = EMX.WorkersBenefits.MVC.Tests
 		SccProjectUniqueName8 = EMX.WorkersBenefits.ASPCore.API\\EMX.WorkersBenefits.ASPCore.API.csproj
+		SccProjectTopLevelParentUniqueName8 = EMX.WorkersBenefits.sln
 		SccProjectName8 = EMX.WorkersBenefits.ASPCore.API
 		SccLocalPath8 = EMX.WorkersBenefits.ASPCore.API
 		SccProjectUniqueName9 = EMX.WorkersBenefits.Admin.MVC\\EMX.WorkersBenefits.Admin.MVC.csproj
+		SccProjectTopLevelParentUniqueName9 = EMX.WorkersBenefits.sln
 		SccProjectName9 = EMX.WorkersBenefits.Admin.MVC
 		SccLocalPath9 = EMX.WorkersBenefits.Admin.MVC
 		SccProjectUniqueName10 = EMX.WorkersBenefits.SPA.API\\EMX.WorkersBenefits.SPA.API.csproj
+		SccProjectTopLevelParentUniqueName10 = EMX.WorkersBenefits.sln
 		SccProjectName10 = EMX.WorkersBenefits.SPA.API
 		SccLocalPath10 = EMX.WorkersBenefits.SPA.API
 		SccProjectUniqueName11 = EMX.WorkersBenefits.SPA.API.Tests\\EMX.WorkersBenefits.SPA.API.Tests.csproj
+		SccProjectTopLevelParentUniqueName11 = EMX.WorkersBenefits.sln
 		SccProjectName11 = EMX.WorkersBenefits.SPA.API.Tests
 		SccLocalPath11 = EMX.WorkersBenefits.SPA.API.Tests
+		SccProjectUniqueName12 = EMX.WorkersBenefits.ProxyServices\\EMX.WorkersBenefits.ProxyServices.csproj
+		SccProjectName12 = EMX.WorkersBenefits.ProxyServices
+		SccLocalPath12 = EMX.WorkersBenefits.ProxyServices
 	EndGlobalSection
 EndGlobal

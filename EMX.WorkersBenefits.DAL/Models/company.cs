@@ -18,6 +18,7 @@ namespace EMX.WorkersBenefits.DAL.Models
         public company()
         {
             this.workers = new HashSet<worker>();
+            this.voucher_grants = new HashSet<voucher_grants>();
             this.company_persons = new HashSet<company_persons>();
         }
     
@@ -28,9 +29,12 @@ namespace EMX.WorkersBenefits.DAL.Models
         public string contact_person_name { get; set; }
         public string contact_person_phone { get; set; }
         public System.DateTime registration_date { get; set; }
+        public string logo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<worker> workers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<voucher_grants> voucher_grants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<company_persons> company_persons { get; set; }
     }

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<EMX.WorkersBenefits.DAL.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product_uid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precedence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.popup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.initial_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipping)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.final_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.products_in_orders.id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_uid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precedence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.popup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.initial_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shipping)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.final_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.products_in_orders.id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.product_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.product_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.product_id })
+        </td>
+    </tr>
+}
+
+</table>

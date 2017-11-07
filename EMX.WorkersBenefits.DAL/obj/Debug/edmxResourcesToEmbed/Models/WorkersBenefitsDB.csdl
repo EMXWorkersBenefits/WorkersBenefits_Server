@@ -1,13 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WorkersBenefitsDBModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WorkersBenefitsDB2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin_person_settings" EntityType="WorkersBenefitsDBModels.admin_person_settings" />
+    <EntitySet Name="admin_persons" EntityType="WorkersBenefitsDBModels.admin_persons" />
+    <EntitySet Name="categories" EntityType="WorkersBenefitsDBModels.category" />
+    <EntitySet Name="companies" EntityType="WorkersBenefitsDBModels.company" />
+    <EntitySet Name="company_person_settings" EntityType="WorkersBenefitsDBModels.company_person_settings" />
+    <EntitySet Name="company_persons" EntityType="WorkersBenefitsDBModels.company_persons" />
+    <EntitySet Name="global_settings" EntityType="WorkersBenefitsDBModels.global_settings" />
+    <EntitySet Name="order_payments" EntityType="WorkersBenefitsDBModels.order_payments" />
+    <EntitySet Name="orders" EntityType="WorkersBenefitsDBModels.order" />
+    <EntitySet Name="products" EntityType="WorkersBenefitsDBModels.product" />
+    <EntitySet Name="products_in_orders" EntityType="WorkersBenefitsDBModels.products_in_orders" />
+    <EntitySet Name="roles" EntityType="WorkersBenefitsDBModels.role" />
+    <EntitySet Name="userclaims" EntityType="WorkersBenefitsDBModels.userclaim" />
+    <EntitySet Name="userlogins" EntityType="WorkersBenefitsDBModels.userlogin" />
+    <EntitySet Name="users" EntityType="WorkersBenefitsDBModels.user" />
+    <EntitySet Name="voucher_grants" EntityType="WorkersBenefitsDBModels.voucher_grants" />
+    <EntitySet Name="voucher_requests" EntityType="WorkersBenefitsDBModels.voucher_requests" />
+    <EntitySet Name="vouchers" EntityType="WorkersBenefitsDBModels.voucher" />
+    <EntitySet Name="worker_settings" EntityType="WorkersBenefitsDBModels.worker_settings" />
+    <EntitySet Name="workers" EntityType="WorkersBenefitsDBModels.worker" />
+    <AssociationSet Name="admin_person_id_FK" Association="WorkersBenefitsDBModels.admin_person_id_FK">
+      <End Role="admin_persons" EntitySet="admin_persons" />
+      <End Role="admin_person_settings" EntitySet="admin_person_settings" />
+    </AssociationSet>
+    <AssociationSet Name="user_id_1" Association="WorkersBenefitsDBModels.user_id_1">
+      <End Role="user" EntitySet="users" />
+      <End Role="admin_persons" EntitySet="admin_persons" />
+    </AssociationSet>
+    <AssociationSet Name="category_id" Association="WorkersBenefitsDBModels.category_id">
+      <End Role="category" EntitySet="categories" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="company_id" Association="WorkersBenefitsDBModels.company_id">
+      <End Role="company" EntitySet="companies" />
+      <End Role="worker" EntitySet="workers" />
+    </AssociationSet>
+    <AssociationSet Name="company_id_3" Association="WorkersBenefitsDBModels.company_id_3">
+      <End Role="company" EntitySet="companies" />
+      <End Role="voucher_grants" EntitySet="voucher_grants" />
+    </AssociationSet>
+    <AssociationSet Name="company_id_FK" Association="WorkersBenefitsDBModels.company_id_FK">
+      <End Role="company" EntitySet="companies" />
+      <End Role="company_persons" EntitySet="company_persons" />
+    </AssociationSet>
+    <AssociationSet Name="company_person_id_FK" Association="WorkersBenefitsDBModels.company_person_id_FK">
+      <End Role="company_persons" EntitySet="company_persons" />
+      <End Role="company_person_settings" EntitySet="company_person_settings" />
+    </AssociationSet>
+    <AssociationSet Name="user_id_3" Association="WorkersBenefitsDBModels.user_id_3">
+      <End Role="user" EntitySet="users" />
+      <End Role="company_persons" EntitySet="company_persons" />
+    </AssociationSet>
+    <AssociationSet Name="payment_id_1" Association="WorkersBenefitsDBModels.payment_id_1">
+      <End Role="order_payments" EntitySet="order_payments" />
+      <End Role="order" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="order_id" Association="WorkersBenefitsDBModels.order_id">
+      <End Role="order" EntitySet="orders" />
+      <End Role="products_in_orders" EntitySet="products_in_orders" />
+    </AssociationSet>
+    <AssociationSet Name="workier_id_fk" Association="WorkersBenefitsDBModels.workier_id_fk">
+      <End Role="worker" EntitySet="workers" />
+      <End Role="order" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="product_id_2" Association="WorkersBenefitsDBModels.product_id_2">
+      <End Role="product" EntitySet="products" />
+      <End Role="products_in_orders" EntitySet="products_in_orders" />
+    </AssociationSet>
+    <AssociationSet Name="ApplicationUser_Claims" Association="WorkersBenefitsDBModels.ApplicationUser_Claims">
+      <End Role="user" EntitySet="users" />
+      <End Role="userclaim" EntitySet="userclaims" />
+    </AssociationSet>
+    <AssociationSet Name="ApplicationUser_Logins" Association="WorkersBenefitsDBModels.ApplicationUser_Logins">
+      <End Role="user" EntitySet="users" />
+      <End Role="userlogin" EntitySet="userlogins" />
+    </AssociationSet>
+    <AssociationSet Name="user_id_2" Association="WorkersBenefitsDBModels.user_id_2">
+      <End Role="user" EntitySet="users" />
+      <End Role="worker" EntitySet="workers" />
+    </AssociationSet>
+    <AssociationSet Name="voucher_id" Association="WorkersBenefitsDBModels.voucher_id">
+      <End Role="voucher" EntitySet="vouchers" />
+      <End Role="voucher_grants" EntitySet="voucher_grants" />
+    </AssociationSet>
+    <AssociationSet Name="worker_id_2" Association="WorkersBenefitsDBModels.worker_id_2">
+      <End Role="worker" EntitySet="workers" />
+      <End Role="voucher_grants" EntitySet="voucher_grants" />
+    </AssociationSet>
+    <AssociationSet Name="voucher_id_4" Association="WorkersBenefitsDBModels.voucher_id_4">
+      <End Role="voucher" EntitySet="vouchers" />
+      <End Role="voucher_requests" EntitySet="voucher_requests" />
+    </AssociationSet>
+    <AssociationSet Name="worker_id_4" Association="WorkersBenefitsDBModels.worker_id_4">
+      <End Role="worker" EntitySet="workers" />
+      <End Role="voucher_requests" EntitySet="voucher_requests" />
+    </AssociationSet>
+    <AssociationSet Name="worker_id_fk1" Association="WorkersBenefitsDBModels.worker_id_fk1">
+      <End Role="worker" EntitySet="workers" />
+      <End Role="worker_settings" EntitySet="worker_settings" />
+    </AssociationSet>
+    <AssociationSet Name="userroles" Association="WorkersBenefitsDBModels.userroles">
+      <End Role="user" EntitySet="users" />
+      <End Role="role" EntitySet="roles" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="admin_person_settings">
     <Key>
       <PropertyRef Name="setting_id" />
     </Key>
     <Property Name="setting_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="admin_person_id" Type="Int32" Nullable="false" />
-    <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="setting_key" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="settings_value" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="admin_persons" Relationship="WorkersBenefitsDBModels.admin_person_id_FK" FromRole="admin_person_settings" ToRole="admin_persons" />
   </EntityType>
@@ -16,23 +122,26 @@
       <PropertyRef Name="admin_person_id" />
     </Key>
     <Property Name="admin_person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="last_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="identity_user_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="admin_person_settings" Relationship="WorkersBenefitsDBModels.admin_person_id_FK" FromRole="admin_persons" ToRole="admin_person_settings" />
+    <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.user_id_1" FromRole="admin_persons" ToRole="user" />
   </EntityType>
   <EntityType Name="category">
     <Key>
       <PropertyRef Name="category_id" />
     </Key>
     <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="magnitude" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="visual_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="precedence" Type="Int32" />
     <NavigationProperty Name="products" Relationship="WorkersBenefitsDBModels.category_id" FromRole="category" ToRole="product" />
   </EntityType>
   <EntityType Name="company">
@@ -40,13 +149,15 @@
       <PropertyRef Name="company_id" />
     </Key>
     <Property Name="company_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="phone_number" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="contact_person_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="contact_person_phone" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="contact_person_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="contact_person_phone" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="registration_date" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="workers" Relationship="WorkersBenefitsDBModels.company_id" FromRole="company" ToRole="worker" />
+    <NavigationProperty Name="voucher_grants" Relationship="WorkersBenefitsDBModels.company_id_3" FromRole="company" ToRole="voucher_grants" />
     <NavigationProperty Name="company_persons" Relationship="WorkersBenefitsDBModels.company_id_FK" FromRole="company" ToRole="company_persons" />
   </EntityType>
   <EntityType Name="company_person_settings">
@@ -55,8 +166,8 @@
     </Key>
     <Property Name="setting_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="company_person_id" Type="Int32" Nullable="false" />
-    <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="setting_key" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="settings_value" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="company_persons" Relationship="WorkersBenefitsDBModels.company_person_id_FK" FromRole="company_person_settings" ToRole="company_persons" />
   </EntityType>
@@ -65,73 +176,106 @@
       <PropertyRef Name="company_person_id" />
     </Key>
     <Property Name="company_person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="last_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="identity_user_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="company_id" Type="Int32" Nullable="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="workerscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="company_personscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="company_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id_FK" FromRole="company_persons" ToRole="company" />
     <NavigationProperty Name="company_person_settings" Relationship="WorkersBenefitsDBModels.company_person_id_FK" FromRole="company_persons" ToRole="company_person_settings" />
+    <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.user_id_3" FromRole="company_persons" ToRole="user" />
+  </EntityType>
+  <EntityType Name="global_settings">
+    <Key>
+      <PropertyRef Name="global_setting_id" />
+    </Key>
+    <Property Name="global_setting_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="global_settings_key" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="order_payments">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="credit_card_type" Type="Int32" Nullable="false" />
+    <Property Name="cerdit_card_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="credit_card_exp_date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="credit_card_cvv" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="request_charge_date" Type="DateTime" Nullable="false" />
+    <Property Name="payment_status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="orders" Relationship="WorkersBenefitsDBModels.payment_id_1" FromRole="order_payments" ToRole="order" />
   </EntityType>
   <EntityType Name="order">
     <Key>
       <PropertyRef Name="order_id" />
     </Key>
     <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_uid" Type="String" Nullable="false" MaxLength="38" FixedLength="false" Unicode="false" />
     <Property Name="worker_id" Type="Int32" Nullable="false" />
-    <Property Name="credit_card_auth_id" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="order_payment_id" Type="Int32" Nullable="false" />
     <Property Name="charge_amount" Type="Decimal" Nullable="false" />
     <Property Name="order_date" Type="DateTime" Nullable="false" />
+    <Property Name="order_status" Type="Int32" Nullable="false" />
     <Property Name="comments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="last_updated" Type="DateTime" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="order_payments" Relationship="WorkersBenefitsDBModels.payment_id_1" FromRole="order" ToRole="order_payments" />
+    <NavigationProperty Name="products_in_orders" Relationship="WorkersBenefitsDBModels.order_id" FromRole="order" ToRole="products_in_orders" />
     <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.workier_id_fk" FromRole="order" ToRole="worker" />
-  </EntityType>
-  <EntityType Name="product_types">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="products" Relationship="WorkersBenefitsDBModels.product_type_id" FromRole="product_types" ToRole="product" />
   </EntityType>
   <EntityType Name="product">
     <Key>
       <PropertyRef Name="product_id" />
     </Key>
     <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="price" Type="Decimal" Nullable="false" />
-    <Property Name="restrictions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="product_uid" Type="String" MaxLength="38" FixedLength="false" Unicode="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="precedence" Type="Int32" />
     <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="popup" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="productscol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="category_id" Type="Int32" Nullable="false" />
-    <Property Name="product_type_id" Type="Int32" Nullable="false" />
+    <Property Name="initial_price" Type="Decimal" />
+    <Property Name="discount" Type="Decimal" />
+    <Property Name="price" Type="Decimal" />
+    <Property Name="shipping" Type="Decimal" />
+    <Property Name="final_price" Type="Decimal" Nullable="false" />
+    <Property Name="globalPrecedence" Type="Int32" />
     <NavigationProperty Name="category" Relationship="WorkersBenefitsDBModels.category_id" FromRole="product" ToRole="category" />
-    <NavigationProperty Name="product_types" Relationship="WorkersBenefitsDBModels.product_type_id" FromRole="product" ToRole="product_types" />
-    <NavigationProperty Name="worker_purchase_history" Relationship="WorkersBenefitsDBModels.product_id_fk" FromRole="product" ToRole="worker_purchase_history" />
+    <NavigationProperty Name="products_in_orders" Relationship="WorkersBenefitsDBModels.product_id_2" FromRole="product" ToRole="products_in_orders" />
+  </EntityType>
+  <EntityType Name="products_in_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="WorkersBenefitsDBModels.order_id" FromRole="products_in_orders" ToRole="order" />
+    <NavigationProperty Name="product" Relationship="WorkersBenefitsDBModels.product_id_2" FromRole="products_in_orders" ToRole="product" />
   </EntityType>
   <EntityType Name="role">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="users" Relationship="Self.userroles" FromRole="roles" ToRole="users" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="WorkersBenefitsDBModels.userroles" FromRole="role" ToRole="user" />
   </EntityType>
   <EntityType Name="userclaim">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="ClaimType" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
     <Property Name="ClaimValue" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="user" Relationship="Self.ApplicationUser_Claims" FromRole="userclaims" ToRole="users" />
+    <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.ApplicationUser_Claims" FromRole="userclaim" ToRole="user" />
   </EntityType>
   <EntityType Name="userlogin">
     <Key>
@@ -139,16 +283,16 @@
       <PropertyRef Name="ProviderKey" />
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="user" Relationship="Self.ApplicationUser_Logins" FromRole="userlogins" ToRole="users" />
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.ApplicationUser_Logins" FromRole="userlogin" ToRole="user" />
   </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
     <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
     <Property Name="PasswordHash" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
@@ -159,21 +303,52 @@
     <Property Name="LockoutEndDateUtc" Type="DateTime" />
     <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
     <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="userclaims" Relationship="Self.ApplicationUser_Claims" FromRole="users" ToRole="userclaims" />
-    <NavigationProperty Name="userlogins" Relationship="Self.ApplicationUser_Logins" FromRole="users" ToRole="userlogins" />
-    <NavigationProperty Name="roles" Relationship="Self.userroles" FromRole="users" ToRole="roles" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="admin_persons" Relationship="WorkersBenefitsDBModels.user_id_1" FromRole="user" ToRole="admin_persons" />
+    <NavigationProperty Name="company_persons" Relationship="WorkersBenefitsDBModels.user_id_3" FromRole="user" ToRole="company_persons" />
+    <NavigationProperty Name="userclaims" Relationship="WorkersBenefitsDBModels.ApplicationUser_Claims" FromRole="user" ToRole="userclaim" />
+    <NavigationProperty Name="userlogins" Relationship="WorkersBenefitsDBModels.ApplicationUser_Logins" FromRole="user" ToRole="userlogin" />
+    <NavigationProperty Name="workers" Relationship="WorkersBenefitsDBModels.user_id_2" FromRole="user" ToRole="worker" />
+    <NavigationProperty Name="roles" Relationship="WorkersBenefitsDBModels.userroles" FromRole="user" ToRole="role" />
   </EntityType>
-  <EntityType Name="worker_purchase_history">
+  <EntityType Name="voucher_grants">
     <Key>
-      <PropertyRef Name="purchase_id" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="purchase_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="product_id" Type="Int32" />
-    <Property Name="discount" Type="Decimal" />
-    <Property Name="final_price" Type="Decimal" />
-    <Property Name="purchase_date" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="product" Relationship="WorkersBenefitsDBModels.product_id_fk" FromRole="worker_purchase_history" ToRole="product" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="company_id" Type="Int32" Nullable="false" />
+    <Property Name="voucher_id" Type="Int32" Nullable="false" />
+    <Property Name="worker_id" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id_3" FromRole="voucher_grants" ToRole="company" />
+    <NavigationProperty Name="voucher" Relationship="WorkersBenefitsDBModels.voucher_id" FromRole="voucher_grants" ToRole="voucher" />
+    <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.worker_id_2" FromRole="voucher_grants" ToRole="worker" />
+  </EntityType>
+  <EntityType Name="voucher_requests">
+    <Key>
+      <PropertyRef Name="voucher_request_id" />
+    </Key>
+    <Property Name="voucher_request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="worker_id" Type="Int32" Nullable="false" />
+    <Property Name="voucher_id" Type="Int32" Nullable="false" />
+    <Property Name="request_date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="voucher" Relationship="WorkersBenefitsDBModels.voucher_id_4" FromRole="voucher_requests" ToRole="voucher" />
+    <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.worker_id_4" FromRole="voucher_requests" ToRole="worker" />
+  </EntityType>
+  <EntityType Name="voucher">
+    <Key>
+      <PropertyRef Name="voucher_id" />
+    </Key>
+    <Property Name="voucher_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="valid_start_date" Type="DateTime" Nullable="false" />
+    <Property Name="valid_end_date" Type="DateTime" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="voucher_grants" Relationship="WorkersBenefitsDBModels.voucher_id" FromRole="voucher" ToRole="voucher_grants" />
+    <NavigationProperty Name="voucher_requests" Relationship="WorkersBenefitsDBModels.voucher_id_4" FromRole="voucher" ToRole="voucher_requests" />
   </EntityType>
   <EntityType Name="worker_settings">
     <Key>
@@ -181,8 +356,8 @@
     </Key>
     <Property Name="setting_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="worker_id" Type="Int32" Nullable="false" />
-    <Property Name="setting_key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="settings_value" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="setting_key" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="settings_value" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="last_updated" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="worker" Relationship="WorkersBenefitsDBModels.worker_id_fk1" FromRole="worker_settings" ToRole="worker" />
   </EntityType>
@@ -191,117 +366,23 @@
       <PropertyRef Name="worker_id" />
     </Key>
     <Property Name="worker_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="identity_user_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="company_id" Type="Int32" Nullable="false" />
     <Property Name="worker_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="id_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="last_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <Property Name="last_update" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="company" Relationship="WorkersBenefitsDBModels.company_id" FromRole="worker" ToRole="company" />
     <NavigationProperty Name="orders" Relationship="WorkersBenefitsDBModels.workier_id_fk" FromRole="worker" ToRole="order" />
+    <NavigationProperty Name="user" Relationship="WorkersBenefitsDBModels.user_id_2" FromRole="worker" ToRole="user" />
+    <NavigationProperty Name="voucher_grants" Relationship="WorkersBenefitsDBModels.worker_id_2" FromRole="worker" ToRole="voucher_grants" />
+    <NavigationProperty Name="voucher_requests" Relationship="WorkersBenefitsDBModels.worker_id_4" FromRole="worker" ToRole="voucher_requests" />
     <NavigationProperty Name="worker_settings" Relationship="WorkersBenefitsDBModels.worker_id_fk1" FromRole="worker" ToRole="worker_settings" />
   </EntityType>
-  <Association Name="ApplicationUser_Claims">
-    <End Role="users" Type="Self.user" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="userclaims" Type="Self.userclaim" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="userclaims">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ApplicationUser_Logins">
-    <End Role="users" Type="Self.user" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="userlogins" Type="Self.userlogin" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="userlogins">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="userroles">
-    <End Role="users" Type="Self.user" Multiplicity="*" />
-    <End Role="roles" Type="Self.role" Multiplicity="*" />
-  </Association>
-  <EntityContainer Name="WorkersBenefitsDB" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="admin_person_settings" EntityType="Self.admin_person_settings" />
-    <EntitySet Name="admin_persons" EntityType="Self.admin_persons" />
-    <EntitySet Name="categories" EntityType="Self.category" />
-    <EntitySet Name="companies" EntityType="Self.company" />
-    <EntitySet Name="company_person_settings" EntityType="Self.company_person_settings" />
-    <EntitySet Name="company_persons" EntityType="Self.company_persons" />
-    <EntitySet Name="orders" EntityType="Self.order" />
-    <EntitySet Name="product_types" EntityType="Self.product_types" />
-    <EntitySet Name="products" EntityType="Self.product" />
-    <EntitySet Name="roles" EntityType="Self.role" />
-    <EntitySet Name="userclaims" EntityType="Self.userclaim" />
-    <EntitySet Name="userlogins" EntityType="Self.userlogin" />
-    <EntitySet Name="users" EntityType="Self.user" />
-    <EntitySet Name="worker_purchase_history" EntityType="Self.worker_purchase_history" />
-    <EntitySet Name="worker_settings" EntityType="Self.worker_settings" />
-    <EntitySet Name="workers" EntityType="Self.worker" />
-    <AssociationSet Name="ApplicationUser_Claims" Association="Self.ApplicationUser_Claims">
-      <End Role="users" EntitySet="users" />
-      <End Role="userclaims" EntitySet="userclaims" />
-    </AssociationSet>
-    <AssociationSet Name="ApplicationUser_Logins" Association="Self.ApplicationUser_Logins">
-      <End Role="users" EntitySet="users" />
-      <End Role="userlogins" EntitySet="userlogins" />
-    </AssociationSet>
-    <AssociationSet Name="userroles" Association="Self.userroles">
-      <End Role="users" EntitySet="users" />
-      <End Role="roles" EntitySet="roles" />
-    </AssociationSet>
-    <AssociationSet Name="admin_person_id_FK" Association="WorkersBenefitsDBModels.admin_person_id_FK">
-      <End Role="admin_persons" EntitySet="admin_persons" />
-      <End Role="admin_person_settings" EntitySet="admin_person_settings" />
-    </AssociationSet>
-    <AssociationSet Name="category_id" Association="WorkersBenefitsDBModels.category_id">
-      <End Role="category" EntitySet="categories" />
-      <End Role="product" EntitySet="products" />
-    </AssociationSet>
-    <AssociationSet Name="company_id" Association="WorkersBenefitsDBModels.company_id">
-      <End Role="company" EntitySet="companies" />
-      <End Role="worker" EntitySet="workers" />
-    </AssociationSet>
-    <AssociationSet Name="company_id_FK" Association="WorkersBenefitsDBModels.company_id_FK">
-      <End Role="company" EntitySet="companies" />
-      <End Role="company_persons" EntitySet="company_persons" />
-    </AssociationSet>
-    <AssociationSet Name="company_person_id_FK" Association="WorkersBenefitsDBModels.company_person_id_FK">
-      <End Role="company_persons" EntitySet="company_persons" />
-      <End Role="company_person_settings" EntitySet="company_person_settings" />
-    </AssociationSet>
-    <AssociationSet Name="workier_id_fk" Association="WorkersBenefitsDBModels.workier_id_fk">
-      <End Role="worker" EntitySet="workers" />
-      <End Role="order" EntitySet="orders" />
-    </AssociationSet>
-    <AssociationSet Name="product_type_id" Association="WorkersBenefitsDBModels.product_type_id">
-      <End Role="product_types" EntitySet="product_types" />
-      <End Role="product" EntitySet="products" />
-    </AssociationSet>
-    <AssociationSet Name="product_id_fk" Association="WorkersBenefitsDBModels.product_id_fk">
-      <End Role="product" EntitySet="products" />
-      <End Role="worker_purchase_history" EntitySet="worker_purchase_history" />
-    </AssociationSet>
-    <AssociationSet Name="worker_id_fk1" Association="WorkersBenefitsDBModels.worker_id_fk1">
-      <End Role="worker" EntitySet="workers" />
-      <End Role="worker_settings" EntitySet="worker_settings" />
-    </AssociationSet>
-  </EntityContainer>
   <Association Name="admin_person_id_FK">
     <End Type="WorkersBenefitsDBModels.admin_persons" Role="admin_persons" Multiplicity="1" />
     <End Type="WorkersBenefitsDBModels.admin_person_settings" Role="admin_person_settings" Multiplicity="*" />
@@ -311,6 +392,18 @@
       </Principal>
       <Dependent Role="admin_person_settings">
         <PropertyRef Name="admin_person_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_id_1">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.admin_persons" Role="admin_persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="admin_persons">
+        <PropertyRef Name="identity_user_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -334,6 +427,18 @@
         <PropertyRef Name="company_id" />
       </Principal>
       <Dependent Role="worker">
+        <PropertyRef Name="company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="company_id_3">
+    <End Type="WorkersBenefitsDBModels.company" Role="company" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.voucher_grants" Role="voucher_grants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="company_id" />
+      </Principal>
+      <Dependent Role="voucher_grants">
         <PropertyRef Name="company_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -362,6 +467,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="user_id_3">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.company_persons" Role="company_persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="company_persons">
+        <PropertyRef Name="identity_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payment_id_1">
+    <End Type="WorkersBenefitsDBModels.order_payments" Role="order_payments" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order_payments">
+        <PropertyRef Name="payment_id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="order_payment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_id">
+    <End Type="WorkersBenefitsDBModels.order" Role="order" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.products_in_orders" Role="products_in_orders" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="products_in_orders">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="workier_id_fk">
     <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="1" />
     <End Type="WorkersBenefitsDBModels.order" Role="order" Multiplicity="*" />
@@ -374,27 +515,103 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="product_type_id">
-    <End Type="WorkersBenefitsDBModels.product_types" Role="product_types" Multiplicity="1" />
-    <End Type="WorkersBenefitsDBModels.product" Role="product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="product_types">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="product">
-        <PropertyRef Name="product_type_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="product_id_fk">
+  <Association Name="product_id_2">
     <End Type="WorkersBenefitsDBModels.product" Role="product" Multiplicity="1" />
-    <End Type="WorkersBenefitsDBModels.worker_purchase_history" Role="worker_purchase_history" Multiplicity="*" />
+    <End Type="WorkersBenefitsDBModels.products_in_orders" Role="products_in_orders" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="product">
         <PropertyRef Name="product_id" />
       </Principal>
-      <Dependent Role="worker_purchase_history">
-        <PropertyRef Name="product_id" />
+      <Dependent Role="products_in_orders">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ApplicationUser_Claims">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="WorkersBenefitsDBModels.userclaim" Role="userclaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="userclaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ApplicationUser_Logins">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="WorkersBenefitsDBModels.userlogin" Role="userlogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="userlogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_id_2">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="worker">
+        <PropertyRef Name="identity_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="voucher_id">
+    <End Type="WorkersBenefitsDBModels.voucher" Role="voucher" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.voucher_grants" Role="voucher_grants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="voucher">
+        <PropertyRef Name="voucher_id" />
+      </Principal>
+      <Dependent Role="voucher_grants">
+        <PropertyRef Name="voucher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="worker_id_2">
+    <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.voucher_grants" Role="voucher_grants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="worker">
+        <PropertyRef Name="worker_id" />
+      </Principal>
+      <Dependent Role="voucher_grants">
+        <PropertyRef Name="worker_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="voucher_id_4">
+    <End Type="WorkersBenefitsDBModels.voucher" Role="voucher" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.voucher_requests" Role="voucher_requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="voucher">
+        <PropertyRef Name="voucher_id" />
+      </Principal>
+      <Dependent Role="voucher_requests">
+        <PropertyRef Name="voucher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="worker_id_4">
+    <End Type="WorkersBenefitsDBModels.worker" Role="worker" Multiplicity="1" />
+    <End Type="WorkersBenefitsDBModels.voucher_requests" Role="voucher_requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="worker">
+        <PropertyRef Name="worker_id" />
+      </Principal>
+      <Dependent Role="voucher_requests">
+        <PropertyRef Name="worker_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -409,5 +626,9 @@
         <PropertyRef Name="worker_id" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="userroles">
+    <End Type="WorkersBenefitsDBModels.user" Role="user" Multiplicity="*" />
+    <End Type="WorkersBenefitsDBModels.role" Role="role" Multiplicity="*" />
   </Association>
 </Schema>

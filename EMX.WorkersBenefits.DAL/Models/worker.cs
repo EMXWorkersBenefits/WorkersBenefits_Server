@@ -18,10 +18,13 @@ namespace EMX.WorkersBenefits.DAL.Models
         public worker()
         {
             this.orders = new HashSet<order>();
+            this.voucher_grants = new HashSet<voucher_grants>();
+            this.voucher_requests = new HashSet<voucher_requests>();
             this.worker_settings = new HashSet<worker_settings>();
         }
     
         public int worker_id { get; set; }
+        public string identity_user_id { get; set; }
         public int company_id { get; set; }
         public string worker_number { get; set; }
         public string id_number { get; set; }
@@ -35,6 +38,11 @@ namespace EMX.WorkersBenefits.DAL.Models
         public virtual company company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
+        public virtual user user { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<voucher_grants> voucher_grants { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<voucher_requests> voucher_requests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<worker_settings> worker_settings { get; set; }
     }

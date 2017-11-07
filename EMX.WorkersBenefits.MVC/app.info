@@ -1,0 +1,17 @@
+﻿::::Known DB types::::
+
+payments\payment_status
+1=Succeeded
+2=Rejected
+
+orders\order_status
+1=initial
+2=ordered
+3=delivered
+4=cancelled
+
+vouchers_grants\status    // what is the state of the voucher-grant/request
+1=granted
+2=accepted(=requested)
+3=rejected
+4=revoked(by the company)

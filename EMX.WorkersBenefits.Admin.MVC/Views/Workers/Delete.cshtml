@@ -1,0 +1,105 @@
+﻿@model EMX.WorkersBenefits.DAL.Models.worker
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>worker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.worker_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.worker_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_update)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_update)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.company.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.company.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

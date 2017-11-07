@@ -15,12 +15,18 @@ namespace EMX.WorkersBenefits.DAL.Models
     public partial class order
     {
         public int order_id { get; set; }
+        public string order_uid { get; set; }
         public int worker_id { get; set; }
-        public string credit_card_auth_id { get; set; }
+        public int order_payment_id { get; set; }
         public decimal charge_amount { get; set; }
         public System.DateTime order_date { get; set; }
+        public int order_status { get; set; }
         public string comments { get; set; }
+        public System.DateTime last_updated { get; set; }
+        public bool active { get; set; }
     
+        public virtual order_payments order_payments { get; set; }
+        public virtual products_in_orders products_in_orders { get; set; }
         public virtual worker worker { get; set; }
     }
 }

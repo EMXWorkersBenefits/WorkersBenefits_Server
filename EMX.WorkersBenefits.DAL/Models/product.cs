@@ -15,16 +15,21 @@ namespace EMX.WorkersBenefits.DAL.Models
     public partial class product
     {
         public int product_id { get; set; }
+        public string product_uid { get; set; }
         public int category_id { get; set; }
-        public int product_type_id { get; set; }
         public string image { get; set; }
         public string title { get; set; }
-        public decimal price { get; set; }
-        public string restrictions { get; set; }
+        public Nullable<int> precedence { get; set; }
         public string description { get; set; }
         public string popup { get; set; }
+        public Nullable<decimal> initial_price { get; set; }
+        public Nullable<decimal> discount { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public Nullable<decimal> shipping { get; set; }
+        public decimal final_price { get; set; }
+        public Nullable<int> globalPrecedence { get; set; }
     
         public virtual category category { get; set; }
-        public virtual product_types product_types { get; set; }
+        public virtual products_in_orders products_in_orders { get; set; }
     }
 }

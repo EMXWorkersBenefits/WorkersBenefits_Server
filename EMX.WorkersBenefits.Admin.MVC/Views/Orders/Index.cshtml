@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EMX.WorkersBenefits.DAL.Models.order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.order_uid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.credit_card_auth_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.charge_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order_item_types.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.worker.identity_user_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_uid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.credit_card_auth_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.charge_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_item_types.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.worker.identity_user_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.order_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
+        </td>
+    </tr>
+}
+
+</table>

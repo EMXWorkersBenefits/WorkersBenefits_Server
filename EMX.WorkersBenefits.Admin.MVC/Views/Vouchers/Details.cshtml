@@ -1,0 +1,67 @@
+﻿@model EMX.WorkersBenefits.DAL.Models.voucher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>voucher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valid_start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valid_start_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valid_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valid_end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_updated)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.voucher_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -44,7 +44,7 @@ namespace EMX.WorkersBenefits.BL.Business
         /// sequence is returned in the order of precedence.
         /// </summary>
         /// <returns></returns>
-        public static List<Category> GetAllCategories()
+        public static List<Category> GetAllCatergories()
         {
             using (var db = new WorkersBenefitsDB2())
             {
